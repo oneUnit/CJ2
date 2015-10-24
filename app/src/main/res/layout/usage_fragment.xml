@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="#BDBDBE"
+    android:layout_margin="10dp" >
+
+    <TextView
+        android:id="@+id/dataVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:text="Data Volume Used"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+
+         />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dataVolume"
+        android:layout_alignLeft="@+id/dataVolume"
+        android:layout_below="@+id/dataVolume"
+        android:layout_marginStart="31dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="40dp"
+        android:layout_toStartOf="@+id/textView3"
+        android:layout_toLeftOf="@+id/textView3"
+        android:text="70"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="43dp"
+       />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/dataVolume"
+        android:layout_alignRight="@+id/dataVolume"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:text="@string/megabits"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="43dp"
+       />
+
+</RelativeLayout>
