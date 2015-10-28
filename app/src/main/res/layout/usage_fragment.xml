@@ -1,51 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="match_parent"
     android:background="#BDBDBE"
-    android:layout_margin="10dp" >
+    android:layout_margin="5dp" >
 
-    <TextView
-        android:id="@+id/dataVolume"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:id="@+id/toplayout">
+
+        <TextView
+            android:id="@+id/dataVolume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="38dp"
+            android:text="Data Volume Used"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/dataVolume"
+            android:layout_below="@+id/dataVolume"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="40dp"
+            android:layout_toStartOf="@+id/textView3"
+            android:text="70"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="43dp"
+            />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/dataVolume"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_marginEnd="26dp"
+            android:text="@string/megabits"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="43dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:text="Data Volume Used"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/middlelayout"
+        android:layout_below="@+id/toplayout"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:background="#FFFFFF">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/div"
+            android:text="div"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+        <Spinner
+            android:id="@+id/usage_dropdown"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/div"
+            android:spinnerMode="dropdown"/>
+    </RelativeLayout>
 
-         />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/dataVolume"
-        android:layout_alignLeft="@+id/dataVolume"
-        android:layout_below="@+id/dataVolume"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="40dp"
-        android:layout_toStartOf="@+id/textView3"
-        android:layout_toLeftOf="@+id/textView3"
-        android:text="70"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="43dp"
-       />
+        android:layout_below="@+id/middlelayout"
+        android:layout_marginTop="15dp">
+        <com.jjoe64.graphview.GraphView
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/dataVolume"
-        android:layout_alignRight="@+id/dataVolume"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_marginEnd="26dp"
-        android:layout_marginRight="26dp"
-        android:text="@string/megabits"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="43dp"
-       />
+            android:layout_width="match_parent"
+            android:layout_height="250dip"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:id="@+id/graph" />
+
+    </RelativeLayout>
+
+
 
 </RelativeLayout>
