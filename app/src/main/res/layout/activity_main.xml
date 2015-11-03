@@ -15,7 +15,7 @@
     </FrameLayout>
     <ListView
         android:id="@+id/drawerList"
-        android:background="@color/drawerbackgroundColor"
+        android:background="#212121"
         android:divider="@null"
         android:layout_width="240dp"
         android:layout_height="match_parent"
