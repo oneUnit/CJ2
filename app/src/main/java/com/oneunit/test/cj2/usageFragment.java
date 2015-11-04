@@ -1,8 +1,9 @@
 package com.oneunit.test.cj2;
 
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.Spinner;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.oneunit.test.cj2.UI.Constants;
 
 /**
  * Created by Bishal on 10/16/2015.
@@ -43,19 +45,37 @@ public class usageFragment extends Fragment {
 
             }
         });
+        /***********************Data Handling************************/
+        //Temporary unavailable to get real results
+        float[] dataArr = new float[Constants.DATA_PER_WEEK];
+        FeedReaderDbHelper feedReaderDbHelper = new FeedReaderDbHelper(getActivity());
+        SQLiteDatabase sqLiteDatabase = feedReaderDbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + FeedReaderContract.FeedEntry.TABLE_NAME, null);
+        if(!cursor.moveToFirst()){
 
+        }
+        else {
+            int valueIndex = cursor.getColumnIndex(FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE);
+            for (int i = 0; i < Constants.DATA_PER_WEEK; i++) {
+                //dataArr[i] = Float.valueOf(cursor.getString(valueIndex));
+                //if(!cursor.moveToNext()){
+                    dataArr[i] = (float)(Math.random()*100);
+                //}
+            }
+        }
         GraphView graph = (GraphView)view.findViewById(R.id.graph);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6),
-                new DataPoint(12, 8)
+                new DataPoint(0, dataArr[0]),
+                new DataPoint(1, dataArr[1]),
+                new DataPoint(2, dataArr[2]),
+                new DataPoint(3, dataArr[3]),
+                new DataPoint(4, dataArr[4]),
+                new DataPoint(5, dataArr[5]),
+                new DataPoint(6, dataArr[6])
 
         });
         graph.addSeries(series);
-
+        /*********************************************************/
         return view;
     }
 }

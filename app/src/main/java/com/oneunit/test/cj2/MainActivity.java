@@ -1,5 +1,10 @@
 package com.oneunit.test.cj2;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.content.res.Configuration;
@@ -23,7 +28,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     private ActionBarDrawerToggle drawerListener;
     private MyAdapter myAdapter;
-
+    private Context context;
 
 
     @Override
@@ -54,6 +59,14 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         getSupportActionBar().setHomeButtonEnabled(true); //enables the home button...
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //enables the icon for the home button...
 
+        this.context = this;
+        Intent alarm = new Intent(this.context, PlanScheduler.class);
+        boolean alarmRunning = (PendingIntent.getBroadcast(this.context, 0, alarm, PendingIntent.FLAG_NO_CREATE) != null);
+        if (!alarmRunning){
+            PendingIntent pIntent = PendingIntent.getBroadcast(this.context, 0, alarm, 0);
+            AlarmManager alarmM = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            alarmM.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 1000 * 60 * 5, pIntent);
+        }
 
 
     }
