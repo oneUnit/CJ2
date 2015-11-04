@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BDBDBE"
-    android:layout_margin="5dp" >
+    android:background="#000">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:id="@+id/toplayout">
+        android:layout_height="175dp"
+        android:id="@+id/toplayout"
+        android:layout_marginTop="3dp"
+        android:background="#E0E0E0">
 
         <TextView
             android:id="@+id/dataVolume"
@@ -26,11 +27,11 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/dataVolume"
+            android:layout_alignLeft="@+id/dataVolume"
             android:layout_below="@+id/dataVolume"
-            android:layout_marginStart="31dp"
+            android:layout_marginLeft="31dp"
             android:layout_marginTop="40dp"
-            android:layout_toStartOf="@+id/textView3"
+            android:layout_toLeftOf="@+id/textView3"
             android:text="70"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="43dp"
@@ -40,9 +41,9 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/dataVolume"
+            android:layout_alignRight="@+id/dataVolume"
             android:layout_alignTop="@+id/textView2"
-            android:layout_marginEnd="26dp"
+            android:layout_marginRight="26dp"
             android:text="@string/megabits"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="43dp"
@@ -54,7 +55,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/middlelayout"
         android:layout_below="@+id/toplayout"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="2dp"
         android:padding="10dp"
         android:background="#FFFFFF">
         <TextView
@@ -79,7 +80,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/middlelayout"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="2dp"
+        android:background="#E0E0E0">
         <com.jjoe64.graphview.GraphView
 
             android:layout_width="match_parent"
