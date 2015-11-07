@@ -58,9 +58,9 @@ public class usageFragment extends Fragment {
             int valueIndex = cursor.getColumnIndex(FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE);
             for (int i = 0; i < Constants.DATA_PER_WEEK; i++) {
                 //dataArr[i] = Float.valueOf(cursor.getString(valueIndex));
-                if(!cursor.moveToNext()){
+                //if(!cursor.moveToNext()){
                     dataArr[i] = (float)(Math.random()*100);
-                }
+                //}
             }
         }
         GraphView graph = (GraphView)view.findViewById(R.id.graph);

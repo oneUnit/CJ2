@@ -7,12 +7,20 @@
     android:layout_height="match_parent"
     tools:context="com.example.bishal.datacenter.MainActivity">
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/mainContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </FrameLayout>
+        <fragment
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:name="com.oneunit.test.cj2.usageFragment"
+            android:id="@+id/fragment"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            tools:layout="@layout/usage_fragment" />
+    </RelativeLayout>
     <ListView
         android:id="@+id/drawerList"
         android:background="#212121"
