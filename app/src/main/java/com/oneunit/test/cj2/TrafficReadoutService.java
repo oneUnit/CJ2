@@ -15,7 +15,7 @@ import java.util.Date;
 
 public class TrafficReadoutService extends Service{
     private boolean running;
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
 
     @Override
     public IBinder onBind(Intent intent){
@@ -40,21 +40,24 @@ public class TrafficReadoutService extends Service{
         // collect consupmtion information
         TrafficStats trSt = new TrafficStats();
         double totalBytes = trSt.getMobileRxBytes() + trSt.getMobileTxBytes();
-        FeedReaderDbHelper dbAccess = new FeedReaderDbHelper(TrafficReadoutService.this);
+        double totalBytesOverall = trSt.getTotalRxBytes() + trSt.getTotalTxBytes();
+        DailyFeedReaderDbHelper dbAccess = new DailyFeedReaderDbHelper(TrafficReadoutService.this);
 
         SQLiteDatabase dbSource = dbAccess.getReadableDatabase();
 
         // read the previous value from the database
-        String selectQuery = "SELECT  * FROM " + FeedReaderContract.FeedEntry.TABLE_NAME;
+        String selectQuery = "SELECT  * FROM " + DailyFeedReaderContract.FeedEntry.TABLE_NAME;
         Cursor cursor = dbSource.rawQuery(selectQuery, null);
 
-        double previousData;
+        double previousDataNetwork, previousDataWifi;
         if (cursor.getCount() > 0) {
             cursor.moveToLast();
-            previousData = cursor.getLong(cursor.getColumnIndexOrThrow(FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE));
+            previousDataNetwork = cursor.getLong(cursor.getColumnIndexOrThrow(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK));
+            previousDataWifi = cursor.getLong(cursor.getColumnIndexOrThrow(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI));
         }else
         {
-            previousData = 0;
+            previousDataNetwork = 0;
+            previousDataWifi = 0;
         }
         cursor.close();
 
@@ -64,9 +67,9 @@ public class TrafficReadoutService extends Service{
         // timestamp + total consumption within an hour
         ContentValues values = new ContentValues();
         Date dateNow = new Date();
-        values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_TIME, dateFormat.format(dateNow));
-        values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE, totalBytes - previousData);
-
+        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP, dateFormat.format(dateNow));
+        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK, totalBytes - previousDataNetwork);
+        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK, totalBytesOverall - previousDataWifi);
         long newRowId;
         newRowId = dbSource.insert(FeedReaderContract.FeedEntry.TABLE_NAME, "null", values);
 

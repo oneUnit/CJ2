@@ -48,19 +48,19 @@ public class usageFragment extends Fragment {
         /***********************Data Handling************************/
         //Temporary unavailable to get real results
         float[] dataArr = new float[Constants.DATA_PER_WEEK];
-        FeedReaderDbHelper feedReaderDbHelper = new FeedReaderDbHelper(getActivity());
+        DailyFeedReaderDbHelper feedReaderDbHelper = new DailyFeedReaderDbHelper(getActivity());
         SQLiteDatabase sqLiteDatabase = feedReaderDbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + FeedReaderContract.FeedEntry.TABLE_NAME, null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + DailyFeedReaderContract.FeedEntry.TABLE_NAME, null);
         if(!cursor.moveToFirst()){
 
         }
         else {
-            int valueIndex = cursor.getColumnIndex(FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE);
+            int valueIndex = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK);
             for (int i = 0; i < Constants.DATA_PER_WEEK; i++) {
                 //dataArr[i] = Float.valueOf(cursor.getString(valueIndex));
                 //if(!cursor.moveToNext()){
-                    dataArr[i] = (float)(Math.random()*100);
-                //}
+                    //dataArr[i] = (float)(Math.random()*100);
+                    dataArr[i] =cursor.getFloat(valueIndex);
             }
         }
         GraphView graph = (GraphView)view.findViewById(R.id.graph);
