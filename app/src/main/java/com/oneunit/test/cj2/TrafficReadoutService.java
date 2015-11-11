@@ -15,7 +15,7 @@ import java.util.Date;
 
 public class TrafficReadoutService extends Service{
     private boolean running;
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMddHH");
 
     @Override
     public IBinder onBind(Intent intent){
@@ -40,7 +40,7 @@ public class TrafficReadoutService extends Service{
         // collect consupmtion information
         TrafficStats trSt = new TrafficStats();
         double totalBytes = trSt.getMobileRxBytes() + trSt.getMobileTxBytes();
-        double totalBytesOverall = trSt.getTotalRxBytes() + trSt.getTotalTxBytes();
+        double totalBytesOverall = trSt.getTotalRxBytes() + trSt.getTotalTxBytes() - totalBytes;
         DailyFeedReaderDbHelper dbAccess = new DailyFeedReaderDbHelper(TrafficReadoutService.this);
 
         SQLiteDatabase dbSource = dbAccess.getReadableDatabase();
@@ -69,7 +69,7 @@ public class TrafficReadoutService extends Service{
         Date dateNow = new Date();
         values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP, dateFormat.format(dateNow));
         values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK, totalBytes - previousDataNetwork);
-        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK, totalBytesOverall - previousDataWifi);
+        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI, totalBytesOverall - previousDataWifi);
         long newRowId;
         newRowId = dbSource.insert(FeedReaderContract.FeedEntry.TABLE_NAME, "null", values);
 
