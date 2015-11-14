@@ -65,7 +65,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         if (!alarmRunning){
             PendingIntent pIntent = PendingIntent.getBroadcast(this.context, 0, alarm, 0);
             AlarmManager alarmM = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-            alarmM.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 1000 * 60 * 1, pIntent);
+            alarmM.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 1000 * 60 * 5, pIntent);
         }
 
 
