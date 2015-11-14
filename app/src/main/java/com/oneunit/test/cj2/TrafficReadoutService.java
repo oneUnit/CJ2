@@ -9,13 +9,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.TrafficStats;
 import android.os.*;
+import android.util.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TrafficReadoutService extends Service{
     private boolean running;
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMddHH");
+    //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
 
     @Override
     public IBinder onBind(Intent intent){
@@ -59,21 +60,22 @@ public class TrafficReadoutService extends Service{
             previousDataNetwork = 0;
             previousDataWifi = 0;
         }
-        cursor.close();
+        //cursor.close();
 
-        dbSource = dbAccess.getWritableDatabase();
+        SQLiteDatabase dbSourceWrite = dbAccess.getWritableDatabase();
 
         // creating values to be written into the database
         // timestamp + total consumption within an hour
         ContentValues values = new ContentValues();
         Date dateNow = new Date();
-        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP, dateFormat.format(dateNow));
+        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP, System.currentTimeMillis()); //dateFormat.format(dateNow)
         values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK, totalBytes - previousDataNetwork);
         values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI, totalBytesOverall - previousDataWifi);
-        long newRowId;
-        newRowId = dbSource.insert(FeedReaderContract.FeedEntry.TABLE_NAME, "null", values);
 
-        dbAccess.close();
+        long newRowId = dbSourceWrite.insert(DailyFeedReaderContract.FeedEntry.TABLE_NAME, "null", values);
+
+
+        //dbAccess.close();
 
         //}
         return START_STICKY;
