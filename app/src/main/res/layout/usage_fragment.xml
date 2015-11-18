@@ -2,78 +2,83 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000">
+    android:background="#FFFFFF">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="175dp"
+        android:layout_height="80dp"
         android:id="@+id/toplayout"
         android:layout_marginTop="3dp"
-        android:background="#E0E0E0">
+        android:background="#FFFFFF">
 
         <TextView
-            android:id="@+id/dataVolume"
+            android:id="@+id/totalVolumeNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="38dp"
-            android:text="Data Volume Used"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-
-            />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/dataVolume"
-            android:layout_below="@+id/dataVolume"
-            android:layout_marginLeft="31dp"
-            android:layout_marginTop="40dp"
-            android:layout_toLeftOf="@+id/textView3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:text="70"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="43dp"
+            android:textSize="50dp"
             />
 
+        <Spinner
+            android:id="@+id/usage_dropdown"
+            android:layout_width="200dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"/>
+
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/totalVolumeUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/dataVolume"
-            android:layout_alignTop="@+id/textView2"
-            android:layout_marginRight="26dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="80dp"
             android:text="@string/megabits"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="43dp"
+            android:textSize="50dp"
             />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:id="@+id/middlelayout"
         android:layout_below="@+id/toplayout"
         android:layout_marginTop="2dp"
         android:padding="10dp"
         android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/dateBeforeBtn"
+            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:text="&lt;&lt;"
+            android:textSize="20dp"
+            />
+
         <TextView
+            android:id="@+id/dataDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/div"
-            android:text="div"
-            android:gravity="center_horizontal"
-            android:layout_marginRight="20dp"
-            android:visibility="invisible"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-        <Spinner
-            android:id="@+id/usage_dropdown"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/div"
-            android:spinnerMode="dropdown"/>
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="DDMMYY"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+            />
+
+        <Button
+            android:id="@+id/dateAfterBtn"
+            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_marginLeft="170dp"
+            android:text="&gt;&gt;"
+            android:textSize="20dp"
+            android:layout_alignLeft="@id/dataDate"
+            />
+
     </RelativeLayout>
 
     <RelativeLayout

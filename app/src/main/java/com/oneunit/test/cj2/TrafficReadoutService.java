@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class TrafficReadoutService extends Service{
     private boolean running;
-    //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
 
     @Override
     public IBinder onBind(Intent intent){
@@ -68,7 +68,7 @@ public class TrafficReadoutService extends Service{
         // timestamp + total consumption within an hour
         ContentValues values = new ContentValues();
         Date dateNow = new Date();
-        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP, System.currentTimeMillis()); //dateFormat.format(dateNow)
+        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP, dateFormat.format(dateNow));
         values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK, totalBytes - previousDataNetwork);
         values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI, totalBytesOverall - previousDataWifi);
 

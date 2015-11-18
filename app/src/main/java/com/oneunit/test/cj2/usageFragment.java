@@ -3,6 +3,7 @@ package com.oneunit.test.cj2;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -49,22 +50,20 @@ public class usageFragment extends Fragment {
         DailyFeedReaderDbHelper feedReaderDbHelper = new DailyFeedReaderDbHelper(getActivity());
         SQLiteDatabase sqLiteDatabase = feedReaderDbHelper.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + DailyFeedReaderContract.FeedEntry.TABLE_NAME, null);
-        if(!cursor.moveToFirst()){
-            // the DB is yet empty
+
+        int valueIndexNetwork = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK);
+        int valueIndexWifi = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI);
+        int i = 0;
+        while(cursor.moveToNext()){
+            dataArrNetwork[i] = cursor.getFloat(valueIndexNetwork)/ 1024/1024; // display in MB
+            dataArrWifi[i] = cursor.getFloat(valueIndexWifi)/ 1024/1024; // display in MB
+            i++;
         }
-        else {
-            int valueIndexNetwork = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK);
-            int valueIndexWifi = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI);
-            for (int i = 0; i < Constants.DATA_PER_DAY; i++) {
-                if(!cursor.moveToNext()) {
-                    dataArrNetwork[i] = 0;
-                    dataArrWifi[i] = 0;
-                } else {
-                    dataArrNetwork[i] = cursor.getFloat(valueIndexNetwork)/ 1024/1024; // display in MB
-                    dataArrWifi[i] = cursor.getFloat(valueIndexWifi)/ 1024/1024; // display in MB
-                }
+
+            for (int j = i; j < Constants.DATA_PER_DAY; j++) {
+                    dataArrNetwork[j] = 0;
+                    dataArrWifi[j] = 0;
             }
-        }
         GraphView graph = (GraphView)view.findViewById(R.id.graph);
         LineGraphSeries<DataPoint> seriesNetwork = new LineGraphSeries<DataPoint>();
         LineGraphSeries<DataPoint> seriesWifi = new LineGraphSeries<DataPoint>();
@@ -73,6 +72,7 @@ public class usageFragment extends Fragment {
             seriesWifi.appendData(new DataPoint(j, dataArrWifi[j]), true, Constants.DATA_PER_DAY);
         }
 
+        seriesWifi.setColor(Color.RED);
         graph.addSeries(seriesNetwork);
         graph.addSeries(seriesWifi);
         /*********************************************************/
