@@ -54,13 +54,14 @@ public class usageFragment extends Fragment {
         int valueIndexNetwork = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK);
         int valueIndexWifi = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI);
         int i = 0;
-        cursor.moveToFirst();
-        do{
-            dataArrNetwork[i] = cursor.getFloat(valueIndexNetwork)/ 1024/1024; // display in MB
-            dataArrWifi[i] = cursor.getFloat(valueIndexWifi)/ 1024/1024; // display in MB
-            i++;
+        if(cursor.moveToFirst()) {
+            do {
+                dataArrNetwork[i] = cursor.getFloat(valueIndexNetwork) / 1024 / 1024; // display in MB
+                dataArrWifi[i] = cursor.getFloat(valueIndexWifi) / 1024 / 1024; // display in MB
+                i++;
+            }
+            while (cursor.moveToNext());
         }
-        while (cursor.moveToNext());
 
             for (int j = i; j < Constants.DATA_PER_DAY; j++) {
                     dataArrNetwork[j] = 0;
