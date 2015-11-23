@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.oneunit.test.cj2.UI.Constants;
@@ -64,6 +65,12 @@ public class usageFragment extends Fragment {
             }
         }
         GraphView graph = (GraphView)view.findViewById(R.id.graph);
+        //graph.getGridLabelRenderer().setGridStyle(GridLabelRenderer.GridStyle.NONE);
+        //graph.getGridLabelRenderer().setHighlightZeroLines(true);
+        //graph.getGridLabelRenderer().setVerticalLabelsVisible(true);
+        //graph.getGridLabelRenderer().setHorizontalLabelsVisible(true);
+        //graph.getGridLabelRenderer().setNumHorizontalLabels(3);
+        //graph.getGridLabelRenderer().setNumVerticalLabels(1);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
                 new DataPoint(0, dataArr[0]),
                 new DataPoint(1, dataArr[1]),
@@ -75,7 +82,9 @@ public class usageFragment extends Fragment {
 
         });
         graph.addSeries(series);
+
         /*********************************************************/
+
         return view;
     }
 }

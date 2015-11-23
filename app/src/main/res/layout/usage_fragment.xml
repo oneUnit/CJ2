@@ -2,13 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000">
+    android:background="#FFEF00">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="175dp"
         android:id="@+id/toplayout"
         android:layout_marginTop="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
         android:background="#E0E0E0">
 
         <TextView
@@ -55,7 +57,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/middlelayout"
         android:layout_below="@+id/toplayout"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="3dp"
         android:padding="10dp"
         android:background="#FFFFFF">
         <TextView
@@ -78,9 +80,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/middlelayout"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
         android:background="#E0E0E0">
         <com.jjoe64.graphview.GraphView
 

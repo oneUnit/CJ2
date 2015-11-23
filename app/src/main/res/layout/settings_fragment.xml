@@ -15,7 +15,8 @@
         android:layout_alignParentLeft="true"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
-        android:layout_marginTop="29dp" />
+        android:layout_marginTop="29dp"
+        android:textColor="#000"/>
 
     <Spinner
         android:layout_width="wrap_content"
@@ -26,5 +27,47 @@
         android:layout_toRightOf="@+id/textView4"
         android:layout_marginStart="29dp"
         android:layout_marginLeft="29dp"
-        />
+        android:textColor="#000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Send Data To Server"
+        android:id="@+id/textView17"
+        android:layout_alignTop="@+id/switch1"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:textColor="#000"/>
+
+    <Switch
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch1"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/spinner"
+        android:layout_alignLeft="@+id/language_spinner"
+        android:layout_alignStart="@+id/language_spinner"
+        android:textColor="#000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Language"
+        android:id="@+id/textView18"
+        android:layout_below="@+id/switch1"
+        android:layout_alignLeft="@+id/textView17"
+        android:layout_alignStart="@+id/textView17"
+        android:layout_marginTop="40dp"
+        android:textColor="#000"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/language_spinner"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_alignTop="@+id/textView18"
+        android:layout_toRightOf="@+id/textView17"
+        android:layout_toEndOf="@+id/textView17"
+        android:textColor="#000"/>
 </RelativeLayout>

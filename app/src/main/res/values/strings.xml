@@ -13,9 +13,10 @@
         <item>Usage</item>
         <item>Settings</item>
         <item>Contact</item>
-        <item>Team</item>
+        <item>Comparison</item>
     </string-array>
     <string-array name="tarif">
+        <item>Default</item>
         <item>Tarif 1</item>
         <item>Tarif 2</item>
         <item>Tarif 3</item>
@@ -26,6 +27,14 @@
         <item>Daily</item>
         <item>Weekly</item>
         <item>Monthly</item>
+    </string-array>
+    <string-array name="language">
+        <item>Default</item>
+        <item>English</item>
+        <item>Deutsch</item>
+        <item>French</item>
+        <item>Spanish</item>
+        <item>Finnish</item>
     </string-array>
 
 </resources>
