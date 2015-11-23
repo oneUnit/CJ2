@@ -3,6 +3,7 @@ package com.oneunit.test.cj2;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -37,8 +38,6 @@ public class usageFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(getBaseContext(),parent.getItemAtPosition(position)+"selected",Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
@@ -47,24 +46,29 @@ public class usageFragment extends Fragment {
             }
         });
         /***********************Data Handling************************/
-        //Temporary unavailable to get real results
-        float[] dataArr = new float[Constants.DATA_PER_WEEK];
-        FeedReaderDbHelper feedReaderDbHelper = new FeedReaderDbHelper(getActivity());
+        float[] dataArrNetwork = new float[Constants.DATA_PER_DAY];
+        float[] dataArrWifi = new float[Constants.DATA_PER_DAY];
+        DailyFeedReaderDbHelper feedReaderDbHelper = new DailyFeedReaderDbHelper(getActivity());
         SQLiteDatabase sqLiteDatabase = feedReaderDbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + FeedReaderContract.FeedEntry.TABLE_NAME, null);
-        if(!cursor.moveToFirst()){
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + DailyFeedReaderContract.FeedEntry.TABLE_NAME, null);
 
+        int valueIndexNetwork = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK);
+        int valueIndexWifi = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI);
+        int i = 0;
+        cursor.moveToFirst();
+        do{
+            dataArrNetwork[i] = cursor.getFloat(valueIndexNetwork)/ 1024/1024; // display in MB
+            dataArrWifi[i] = cursor.getFloat(valueIndexWifi)/ 1024/1024; // display in MB
+            i++;
         }
-        else {
-            int valueIndex = cursor.getColumnIndex(FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE);
-            for (int i = 0; i < Constants.DATA_PER_WEEK; i++) {
-                //dataArr[i] = Float.valueOf(cursor.getString(valueIndex));
-                //if(!cursor.moveToNext()){
-                    dataArr[i] = (float)(Math.random()*100);
-                //}
+        while (cursor.moveToNext());
+
+            for (int j = i; j < Constants.DATA_PER_DAY; j++) {
+                    dataArrNetwork[j] = 0;
+                    dataArrWifi[j] = 0;
             }
-        }
         GraphView graph = (GraphView)view.findViewById(R.id.graph);
+<<<<<<< HEAD
         //graph.getGridLabelRenderer().setGridStyle(GridLabelRenderer.GridStyle.NONE);
         //graph.getGridLabelRenderer().setHighlightZeroLines(true);
         //graph.getGridLabelRenderer().setVerticalLabelsVisible(true);
@@ -83,6 +87,18 @@ public class usageFragment extends Fragment {
         });
         graph.addSeries(series);
 
+=======
+        LineGraphSeries<DataPoint> seriesNetwork = new LineGraphSeries<DataPoint>();
+        LineGraphSeries<DataPoint> seriesWifi = new LineGraphSeries<DataPoint>();
+        for (int j = 0; j < Constants.DATA_PER_DAY; j++) {
+            seriesNetwork.appendData(new DataPoint(j, dataArrNetwork[j]), true, Constants.DATA_PER_DAY);
+            seriesWifi.appendData(new DataPoint(j, dataArrWifi[j]), true, Constants.DATA_PER_DAY);
+        }
+
+        seriesWifi.setColor(Color.RED);
+        graph.addSeries(seriesNetwork);
+        graph.addSeries(seriesWifi);
+>>>>>>> 430dd3fc4561d21d4642bf46c94e796685b76e9b
         /*********************************************************/
 
         return view;
