@@ -23,8 +23,9 @@
     </RelativeLayout>
     <ListView
         android:id="@+id/drawerList"
-        android:background="#212121"
-        android:divider="@null"
+        android:background="@color/drawerbackgroundColor"
+        android:divider="#FFEF00"
+        android:dividerHeight="2dp"
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="left">

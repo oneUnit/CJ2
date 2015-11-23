@@ -2,14 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
+    android:background="#FFEF00">
+=======
     android:background="#FFFFFF">
+>>>>>>> 430dd3fc4561d21d4642bf46c94e796685b76e9b
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:id="@+id/toplayout"
         android:layout_marginTop="3dp"
+<<<<<<< HEAD
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:background="#E0E0E0">
+=======
         android:background="#FFFFFF">
+>>>>>>> 430dd3fc4561d21d4642bf46c94e796685b76e9b
 
         <TextView
             android:id="@+id/totalVolumeNum"
@@ -46,7 +56,7 @@
         android:layout_height="80dp"
         android:id="@+id/middlelayout"
         android:layout_below="@+id/toplayout"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="3dp"
         android:padding="10dp"
         android:background="#FFFFFF">
 
@@ -83,9 +93,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/middlelayout"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
         android:background="#E0E0E0">
         <com.jjoe64.graphview.GraphView
 
