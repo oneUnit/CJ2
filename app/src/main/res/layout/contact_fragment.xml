@@ -3,7 +3,7 @@
     android:id="@+id/contact"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/contactbackgroundColor"
+    android:background="@color/contactbackground_color"
     android:layout_marginTop="5dp">
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_marginTop="25dp"
         android:text="Berliner Tor 5"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/contactTextColor"/>
+        android:textColor="@color/contact_text_color"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -46,7 +46,7 @@
         android:layout_centerHorizontal="true"
         android:text="20099 Hamburg"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/contactTextColor"/>
+        android:textColor="@color/contact_text_color"/>
 
     <TextView
         android:id="@+id/textView9"
@@ -58,7 +58,7 @@
         android:layout_marginTop="20dp"
         android:text="Telefonzentrale"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/contactTextColor"/>
+        android:textColor="@color/contact_text_color"/>
 
     <TextView
         android:id="@+id/textView10"
@@ -68,7 +68,7 @@
         android:layout_centerHorizontal="true"
         android:text="Tel. +49 40 428 75-0"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/contactTextColor"/>
+        android:textColor="@color/contact_text_color"/>
 
     <TextView
         android:id="@+id/textView11"
@@ -78,7 +78,7 @@
         android:layout_centerHorizontal="true"
         android:text="Fax +49 40 428 75 91 49"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/contactTextColor" />
+        android:textColor="@color/contact_text_color" />
 
     <TextView
         android:id="@+id/textView12"
@@ -89,7 +89,7 @@
         android:layout_marginTop="32dp"
         android:text="Studierendenzentrum"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/contactTextColor" />
+        android:textColor="@color/contact_text_color" />
 
     <TextView
         android:id="@+id/textView13"
@@ -99,7 +99,7 @@
         android:layout_centerHorizontal="true"
         android:text="Stiftstraße 69, 20099 Hamburg"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/contactTextColor" />
+        android:textColor="@color/contact_text_color" />
 
     <TextView
         android:id="@+id/textView14"
@@ -109,7 +109,7 @@
         android:layout_centerHorizontal="true"
         android:text="Service-Telefon"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/contactTextColor" />
+        android:textColor="@color/contact_text_color" />
 
     <TextView
         android:id="@+id/textView15"
@@ -119,7 +119,7 @@
         android:layout_centerHorizontal="true"
         android:text="Tel. +49.40.80 90 71 740"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/contactTextColor" />
+        android:textColor="@color/contact_text_color" />
 
     <TextView
         android:id="@+id/textView16"
@@ -129,6 +129,6 @@
         android:layout_centerHorizontal="true"
         android:text="info@haw-hamburg.de"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/contactTextColor" />
+        android:textColor="@color/contact_text_color" />
 
 </RelativeLayout>

@@ -14,7 +14,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.oneunit.test.cj2.UI.Constants;
@@ -68,14 +67,13 @@ public class usageFragment extends Fragment {
                     dataArrWifi[j] = 0;
             }
         GraphView graph = (GraphView)view.findViewById(R.id.graph);
-<<<<<<< HEAD
         //graph.getGridLabelRenderer().setGridStyle(GridLabelRenderer.GridStyle.NONE);
         //graph.getGridLabelRenderer().setHighlightZeroLines(true);
         //graph.getGridLabelRenderer().setVerticalLabelsVisible(true);
         //graph.getGridLabelRenderer().setHorizontalLabelsVisible(true);
         //graph.getGridLabelRenderer().setNumHorizontalLabels(3);
         //graph.getGridLabelRenderer().setNumVerticalLabels(1);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
+       /* LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
                 new DataPoint(0, dataArr[0]),
                 new DataPoint(1, dataArr[1]),
                 new DataPoint(2, dataArr[2]),
@@ -85,9 +83,8 @@ public class usageFragment extends Fragment {
                 new DataPoint(6, dataArr[6])
 
         });
-        graph.addSeries(series);
+        graph.addSeries(series);*/
 
-=======
         LineGraphSeries<DataPoint> seriesNetwork = new LineGraphSeries<DataPoint>();
         LineGraphSeries<DataPoint> seriesWifi = new LineGraphSeries<DataPoint>();
         for (int j = 0; j < Constants.DATA_PER_DAY; j++) {
@@ -98,7 +95,6 @@ public class usageFragment extends Fragment {
         seriesWifi.setColor(Color.RED);
         graph.addSeries(seriesNetwork);
         graph.addSeries(seriesWifi);
->>>>>>> 430dd3fc4561d21d4642bf46c94e796685b76e9b
         /*********************************************************/
 
         return view;
