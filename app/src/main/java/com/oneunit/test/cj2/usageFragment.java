@@ -68,7 +68,7 @@ public class usageFragment extends Fragment {
                     dataArrWifi[j] = 0;
             }
         GraphView graph = (GraphView)view.findViewById(R.id.graph);
-<<<<<<< HEAD
+
         //graph.getGridLabelRenderer().setGridStyle(GridLabelRenderer.GridStyle.NONE);
         //graph.getGridLabelRenderer().setHighlightZeroLines(true);
         //graph.getGridLabelRenderer().setVerticalLabelsVisible(true);
@@ -76,18 +76,18 @@ public class usageFragment extends Fragment {
         //graph.getGridLabelRenderer().setNumHorizontalLabels(3);
         //graph.getGridLabelRenderer().setNumVerticalLabels(1);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(0, dataArr[0]),
-                new DataPoint(1, dataArr[1]),
-                new DataPoint(2, dataArr[2]),
-                new DataPoint(3, dataArr[3]),
-                new DataPoint(4, dataArr[4]),
-                new DataPoint(5, dataArr[5]),
-                new DataPoint(6, dataArr[6])
+                new DataPoint(0, dataArrNetwork[0]),
+                new DataPoint(1, dataArrNetwork[1]),
+                new DataPoint(2, dataArrNetwork[2]),
+                new DataPoint(3, dataArrNetwork[3]),
+                new DataPoint(4, dataArrNetwork[4]),
+                new DataPoint(5, dataArrNetwork[5]),
+                new DataPoint(6, dataArrNetwork[6])
 
         });
         graph.addSeries(series);
 
-=======
+
         LineGraphSeries<DataPoint> seriesNetwork = new LineGraphSeries<DataPoint>();
         LineGraphSeries<DataPoint> seriesWifi = new LineGraphSeries<DataPoint>();
         for (int j = 0; j < Constants.DATA_PER_DAY; j++) {
@@ -98,7 +98,7 @@ public class usageFragment extends Fragment {
         seriesWifi.setColor(Color.RED);
         graph.addSeries(seriesNetwork);
         graph.addSeries(seriesWifi);
->>>>>>> 430dd3fc4561d21d4642bf46c94e796685b76e9b
+
         /*********************************************************/
 
         return view;

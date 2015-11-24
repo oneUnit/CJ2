@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:background="@color/contactbackgroundColor"
+    android:layout_marginTop="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
+    <TableRow
+
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/textView0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textSize="25dp"
+            android:text="Compare Your Tarif"
+            android:gravity="center"
+            android:layout_span="6"
+            android:layout_column="0"
+            android:textColor="@color/textColorblack"></TextView>
+    </TableRow>
+    <TableRow>
+        <TextView />
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:text="Tarif"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:gravity="center"
+            android:textSize="19dp"
+            android:layout_column="1"
+            android:textColor="@color/textColorblack"></TextView>
+        <TextView
+            android:id="@+id/TextView2"
+            android:text="Best Tarif"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:gravity="left"
+            android:textSize="19dp"
+            android:layout_column="4"
+            android:textColor="@color/textColorblack"></TextView>
+
+    </TableRow>
+    <TableRow>
+        <TextView />
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent">
+        <TextView
+            android:text="Price Per MB"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/textColorblack"></TextView>
+        <TextView
+            android:id="@+id/tarifPriceView"
+            android:text="xxxx"
+            android:gravity="center_horizontal"
+            android:layout_span="2"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@+id/bestTarifPriceView"
+            android:gravity="center_horizontal"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+    <TableRow>
+        <TextView />
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow4"
+        android:layout_width="match_parent">
+        <TextView
+            android:text="Data Limit"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/textColorblack"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@+id/tarifDataLimitView"
+            android:gravity="center_horizontal"
+            android:layout_span="2"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@+id/bestTarifDataLimitView"
+            android:gravity="center_horizontal"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+    <TableRow>
+        <TextView />
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow5"
+        android:layout_width="match_parent">
+        <TextView
+            android:text="Speed"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/textColorblack"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@+id/tarifSpeedView"
+            android:gravity="center_horizontal"
+            android:layout_span="2"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@+id/bestTarifSpeedView"
+            android:gravity="center_horizontal"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+    <TableRow>
+        <TextView />
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow6"
+        android:layout_width="match_parent">
+        <TextView
+            android:text="Type"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/textColorblack"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@+id/tarifTypeView"
+            android:gravity="center_horizontal"
+            android:layout_span="2"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@+id/bestTarifTypeView"
+            android:gravity="center_horizontal"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+    <TableRow>
+        <TextView />
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/tableRow7"
+        android:layout_width="match_parent">
+        <TextView
+            android:text="Total Cost"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/textColorblack"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@+id/tarifTotalCostView"
+            android:gravity="center_horizontal"
+            android:layout_span="2"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@+id/bestTarifTotalCostView"
+            android:gravity="center_horizontal"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+
+</TableLayout>
