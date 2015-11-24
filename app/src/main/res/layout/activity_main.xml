@@ -5,7 +5,7 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.bishal.datacenter.MainActivity">
+    tools:context="com.oneunit.test.cj2.MainActivity">
 
     <RelativeLayout
         android:id="@+id/mainContent"
@@ -23,7 +23,7 @@
     </RelativeLayout>
     <ListView
         android:id="@+id/drawerList"
-        android:background="@color/drawerbackgroundColor"
+        android:background="@color/drawerbackground_color"
         android:divider="#FFEF00"
         android:dividerHeight="2dp"
         android:layout_width="240dp"

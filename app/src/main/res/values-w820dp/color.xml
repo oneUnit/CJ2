@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#7C07A9</color>
-    <color name="colorPrimaryDark">#58026D</color>
-    <color name="backgroundColor">#C5CAE9</color>
-    <color name="drawerbackgroundColor">#212121</color>
-    <color name="contactbackgroundColor">#E0E0E0</color>
-    <color name="contactTextColor">#000</color>
-    <color name="settingsbackgroundColor">#FFF</color>
+    <color name="color_primary">#7C07A9</color>
+    <color name="color_primary_dark">#58026D</color>
+    <color name="background_color">#C5CAE9</color>
+    <color name="drawerbackground_color">#212121</color>
+    <color name="contactbackground_color">#E0E0E0</color>
+    <color name="contact_text_color">#000</color>
+    <color name="settingsbackground_color">#FFF</color>
 </resources>

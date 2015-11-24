@@ -14,7 +14,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.oneunit.test.cj2.UI.Constants;
@@ -55,26 +54,31 @@ public class usageFragment extends Fragment {
         int valueIndexNetwork = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK);
         int valueIndexWifi = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI);
         int i = 0;
-        cursor.moveToFirst();
-        do{
-            dataArrNetwork[i] = cursor.getFloat(valueIndexNetwork)/ 1024/1024; // display in MB
-            dataArrWifi[i] = cursor.getFloat(valueIndexWifi)/ 1024/1024; // display in MB
-            i++;
+        if(cursor.moveToFirst()) {
+            do {
+                dataArrNetwork[i] = cursor.getFloat(valueIndexNetwork) / 1024 / 1024; // display in MB
+                dataArrWifi[i] = cursor.getFloat(valueIndexWifi) / 1024 / 1024; // display in MB
+                i++;
+            }
+            while (cursor.moveToNext());
         }
-        while (cursor.moveToNext());
 
             for (int j = i; j < Constants.DATA_PER_DAY; j++) {
                     dataArrNetwork[j] = 0;
                     dataArrWifi[j] = 0;
             }
         GraphView graph = (GraphView)view.findViewById(R.id.graph);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4473d2858a9278ef4a1490b2fce9fd5090a47fe4
         //graph.getGridLabelRenderer().setGridStyle(GridLabelRenderer.GridStyle.NONE);
         //graph.getGridLabelRenderer().setHighlightZeroLines(true);
         //graph.getGridLabelRenderer().setVerticalLabelsVisible(true);
         //graph.getGridLabelRenderer().setHorizontalLabelsVisible(true);
         //graph.getGridLabelRenderer().setNumHorizontalLabels(3);
         //graph.getGridLabelRenderer().setNumVerticalLabels(1);
+<<<<<<< HEAD
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
                 new DataPoint(0, dataArrNetwork[0]),
                 new DataPoint(1, dataArrNetwork[1]),
@@ -83,11 +87,24 @@ public class usageFragment extends Fragment {
                 new DataPoint(4, dataArrNetwork[4]),
                 new DataPoint(5, dataArrNetwork[5]),
                 new DataPoint(6, dataArrNetwork[6])
+=======
+       /* LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(0, dataArr[0]),
+                new DataPoint(1, dataArr[1]),
+                new DataPoint(2, dataArr[2]),
+                new DataPoint(3, dataArr[3]),
+                new DataPoint(4, dataArr[4]),
+                new DataPoint(5, dataArr[5]),
+                new DataPoint(6, dataArr[6])
+>>>>>>> 4473d2858a9278ef4a1490b2fce9fd5090a47fe4
 
         });
-        graph.addSeries(series);
+        graph.addSeries(series);*/
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4473d2858a9278ef4a1490b2fce9fd5090a47fe4
         LineGraphSeries<DataPoint> seriesNetwork = new LineGraphSeries<DataPoint>();
         LineGraphSeries<DataPoint> seriesWifi = new LineGraphSeries<DataPoint>();
         for (int j = 0; j < Constants.DATA_PER_DAY; j++) {
@@ -98,7 +115,10 @@ public class usageFragment extends Fragment {
         seriesWifi.setColor(Color.RED);
         graph.addSeries(seriesNetwork);
         graph.addSeries(seriesWifi);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4473d2858a9278ef4a1490b2fce9fd5090a47fe4
         /*********************************************************/
 
         return view;
