@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners
+        android:radius="30px"
+        android:bottomLeftRadius="0px"
+        android:bottomRightRadius="0px"/>
+    <gradient
+        android:angle="270"
+        android:endColor="#FFA508"
+        android:startColor="#FFA508"
+        android:type="linear" />
+
+    <padding
+        android:bottom="9px"
+        android:left="0px"
+        android:right="0px"
+        android:top="0px" />
+
+    <!-- Толщина рамки прямоугольника -->
+    <stroke
+        android:width="0px"
+        android:color="#52B10C" />
+</shape>

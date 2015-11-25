@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/tableLayout1"
@@ -12,12 +11,10 @@
     <TableRow>
         <TextView />
     </TableRow>
-=======
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:id="@+id/settings"
-    android:background="@color/settingsbackground_color">
->>>>>>> 4473d2858a9278ef4a1490b2fce9fd5090a47fe4
+    android:background="@color/settingsbackground_color"/>
 
     <TableRow>
         <TextView />
@@ -25,21 +22,8 @@
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:layout_width="match_parent"
         android:gravity="center_horizontal">
-=======
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/select_tarif"
-        android:id="@+id/textView4"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="29dp"
-        android:textColor="#000"/>
->>>>>>> 4473d2858a9278ef4a1490b2fce9fd5090a47fe4
 
         <TextView
             android:id="@+id/TextView1"

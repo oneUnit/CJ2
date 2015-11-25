@@ -4,20 +4,19 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 //import com.jjoe64.graphview.GraphView;
 
 public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
@@ -36,6 +35,9 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // GraphView graph = (GraphView) findViewById(R.id.graph);
+
+        WelcomeDialog welcomeDialog = new WelcomeDialog(this);
+        welcomeDialog.show();
 
         listView = (ListView)findViewById(R.id.drawerList); //Initilize the list
         myAdapter = new MyAdapter(this);
@@ -65,7 +67,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         if (!alarmRunning){
             PendingIntent pIntent = PendingIntent.getBroadcast(this.context, 0, alarm, 0);
             AlarmManager alarmM = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-            alarmM.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 1000 * 60 * 1, pIntent);
+            alarmM.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 1000 * 30 * 1, pIntent);
         }
 
 
