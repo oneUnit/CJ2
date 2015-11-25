@@ -13,7 +13,11 @@ import java.io.OutputStreamWriter;
  * Config File Structure:
  * first_use = 1|0
  * send_data = 1|0
- *
+ *WebSession Basic
+ *200
+ *0.025
+ *4.99
+ * 7.2
  */
 public class Config {
     private final String FILE = "config.txt";

@@ -96,6 +96,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 fragment = new contactFragment();
                 break;
             case 3:
+                fragment = new comparisonFragment();
                 break;
             default:
                 fragment = new usageFragment();
