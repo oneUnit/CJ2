@@ -15,6 +15,7 @@ import java.util.Date;
  */
 public class TrafficInfoManager {
 
+<<<<<<< HEAD
     public static double[][] getDataPerDay (Context context, Date dayInfo){
         double[][] consumptionPerDay = new double[2][Constants.DATA_PER_DAY];
         int i = 0;
@@ -56,6 +57,49 @@ public class TrafficInfoManager {
             } while (cursor.moveToNext());
         }
         return consumptionPerDay;
+=======
+     public static double[][] getDataPerDay (Context context, Date dayInfo){
+         double[][] consumptionPerDay = new double[2][Constants.DATA_PER_DAY];
+         int i = 0;
+
+         Calendar cal = Calendar.getInstance();
+         cal.setTimeInMillis(dayInfo.getTime());
+         cal.set(Calendar.HOUR_OF_DAY, 0); //set hours to zero
+         cal.set(Calendar.MINUTE, 0); // set minutes to zero
+         cal.set(Calendar.SECOND, 0); //set seconds to zero
+         float dateStart = cal.getTimeInMillis();
+         cal.set(Calendar.HOUR_OF_DAY, 23); //set hours to 23
+         cal.set(Calendar.MINUTE, 59); // set minutes to 59
+         cal.set(Calendar.SECOND, 59); //set seconds to 59
+         float dateStop = cal.getTimeInMillis();
+
+         int j=0;
+         for (j = 0; j < Constants.DATA_PER_DAY; j++) {
+             consumptionPerDay[0][j] = 0;
+             consumptionPerDay[1][j] = 0;
+         }
+
+             DailyFeedReaderDbHelper dbAccess = new DailyFeedReaderDbHelper(context);
+             SQLiteDatabase dbSource = dbAccess.getReadableDatabase();
+             // read the previous value from the database
+             String selectQuery = "SELECT  * FROM " + DailyFeedReaderContract.FeedEntry.TABLE_NAME + " WHERE " + DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP +
+                     " >= " + dateStart + " AND " + DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP + " <= " +  dateStop + " ;";
+             Cursor cursor = dbSource.rawQuery(selectQuery, null);
+
+         int dateColumnIndex = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP);
+         int valueIndexNetwork = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK);
+         int valueIndexWifi = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI);
+
+         if(cursor.moveToFirst()) {
+             do {
+                 cal.setTimeInMillis(cursor.getLong(dateColumnIndex));
+                 j = cal.get(Calendar.HOUR_OF_DAY);
+                 consumptionPerDay[0][j] = cursor.getDouble(valueIndexNetwork) / 1024 / 1024; // display in MB
+                 consumptionPerDay[1][j] = cursor.getDouble(valueIndexWifi) / 1024 / 1024; // display in MB
+                 } while (cursor.moveToNext());
+             }
+         return consumptionPerDay;
+>>>>>>> 36b56133fa70e91a192854fdfd862f502f88b10f
     }
 
     public static double[][] getDataPerWeek (Context context, Date dayInfo){
