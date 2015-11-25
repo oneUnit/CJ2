@@ -17,7 +17,7 @@ import java.util.Date;
 
 public class TrafficReadoutService extends Service{
     private boolean running;
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
+    //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
 
     @Override
     public IBinder onBind(Intent intent){
@@ -54,31 +54,17 @@ public class TrafficReadoutService extends Service{
         double previousDataNetwork, previousDataWifi;
 
         // read the previous value of the TrafficStats readout
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(TrafficReadoutService.this);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         previousDataNetwork = preferences.getFloat("TrafficStatsNetwork", (float)totalBytesMobile);
         previousDataWifi = preferences.getFloat("TrafficStatsWifi", (float)totalBytesWifi);
 
-
-        /*if (cursor.getCount() > 0) {
-            cursor.moveToLast();
-            totalBytesMobile-= cursor.getLong(cursor.getColumnIndexOrThrow(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK));
-            totalBytesWifi -= cursor.getLong(cursor.getColumnIndexOrThrow(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI));
-        }else
-        {
-            //totalBytesMobile = 0;
-            //totalBytesWifi = 0;
-        }
-        //cursor.close();
-        */
         SQLiteDatabase dbSourceWrite = dbAccess.getWritableDatabase();
 
         // creating values to be written into the database
         // timestamp + total consumption within an hour
-        Log.d("DB Mobile", totalBytesMobile + "");
-        Log.d("DB Wifi", totalBytesWifi + "");
         ContentValues values = new ContentValues();
-        Date dateNow = new Date();
-        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP, dateFormat.format(dateNow));
+        //Date dateNow = new Date();
+        values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP, System.currentTimeMillis());
         values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK, totalBytesMobile - previousDataNetwork);
         values.put(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI, totalBytesWifi - previousDataWifi);
 
@@ -89,10 +75,6 @@ public class TrafficReadoutService extends Service{
         editor.putFloat("TrafficStatsWifi", (float)totalBytesWifi);
         editor.commit();
 
-
-        //dbAccess.close();
-
-        //}
         return START_NOT_STICKY;
     }
 }

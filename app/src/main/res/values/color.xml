@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
+    <color name="colorPrimary">#120B73</color>
+    <color name="colorPrimaryDark">#120B73</color>
+    <color name="backgroundColor">#C5CAE9</color>
+    <color name="drawerbackgroundColor">#120B73</color>
+    <color name="contactbackgroundColor">#E0E0E0</color>
+    <color name="contactTextColor">#000</color>
+    <color name="textColorblack">#000</color>
+    <color name="settingsbackgroundColor">#FFF</color>
+=======
     <color name="color_primary">#120B73</color>
     <color name="color_primary_dark">#120B73</color>
     <color name="background_color">#C5CAE9</color>
@@ -7,4 +17,5 @@
     <color name="contactbackground_color">#E0E0E0</color>
     <color name="contact_text_color">#000</color>
     <color name="settingsbackground_color">#FFF</color>
+>>>>>>> 4473d2858a9278ef4a1490b2fce9fd5090a47fe4
 </resources>

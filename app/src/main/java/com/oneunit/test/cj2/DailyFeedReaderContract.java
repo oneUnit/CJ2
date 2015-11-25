@@ -17,7 +17,7 @@ public class DailyFeedReaderContract {
         public static final String FLOAT_TYPE = " REAL";
         public static final String TIMESTAMP_TYPE = " TİMESTAMP"; //YYYY-MM-DD-HH-mm
         public static final String SQL_CREATE_ENTRIES =
-                "CREATE TABLE " + FeedEntry.TABLE_NAME + " (" + FeedEntry.COLUMN_NAME_TIMESTAMP + " " + FeedEntry.TIMESTAMP_TYPE +"  PRIMARY KEY, " +
+                "CREATE TABLE " + FeedEntry.TABLE_NAME + " (" + FeedEntry.COLUMN_NAME_TIMESTAMP + " " + FeedEntry.FLOAT_TYPE +"  PRIMARY KEY, " +
                         FeedEntry.COLUMN_NAME_VOLUME_NETWORK+ " " + FeedEntry.FLOAT_TYPE + ", " +
                         FeedEntry.COLUMN_NAME_VOLUME_WIFI + " " + FeedEntry.FLOAT_TYPE +
                         " );";
