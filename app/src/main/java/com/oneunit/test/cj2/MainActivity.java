@@ -29,15 +29,16 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     private MyAdapter myAdapter;
     private Context context;
 
+    private Config config;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // GraphView graph = (GraphView) findViewById(R.id.graph);
+        this.config = null;
 
-        WelcomeDialog welcomeDialog = new WelcomeDialog(this);
-        welcomeDialog.show();
+
 
         listView = (ListView)findViewById(R.id.drawerList); //Initilize the list
         myAdapter = new MyAdapter(this);
@@ -67,7 +68,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         if (!alarmRunning){
             PendingIntent pIntent = PendingIntent.getBroadcast(this.context, 0, alarm, 0);
             AlarmManager alarmM = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-            alarmM.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 1000 * 30 * 1, pIntent);
+            alarmM.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 1000 * 60 * 60, pIntent);
         }
 
 
@@ -96,7 +97,8 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 fragment = new contactFragment();
                 break;
             case 3:
-                fragment = new comparisonFragment();
+                Intent intent = new Intent(this, comparisonFragment.class);
+                startActivity(intent);
                 break;
             default:
                 fragment = new usageFragment();

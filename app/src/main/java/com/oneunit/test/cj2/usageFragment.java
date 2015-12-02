@@ -1,8 +1,6 @@
 package com.oneunit.test.cj2;
 
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,6 +20,7 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.oneunit.test.cj2.UI.Constants;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -38,11 +37,26 @@ public class usageFragment extends Fragment {
     private TextView dateIndicator;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
     GraphView graph;
+    private  Config config;
 
     Button dateChangeLeft, dateChangeRight;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.usage_fragment,container,false);
+
+        try {
+            this.config = new Config(this.getActivity());
+            if(config.isEmpty()) {
+                WelcomeDialog welcomeDialog = new WelcomeDialog(this.getActivity());
+                welcomeDialog.show();
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+            WelcomeDialog welcomeDialog = new WelcomeDialog(this.getActivity());
+            welcomeDialog.show();
+        }
+
         graph  = (GraphView)view.findViewById(R.id.graph);
         spinner = (Spinner)view.findViewById(R.id.usage_dropdown);
         adapter = ArrayAdapter.createFromResource(getActivity(),R.array.usage,android.R.layout.simple_spinner_item);

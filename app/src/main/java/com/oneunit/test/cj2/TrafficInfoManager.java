@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.oneunit.test.cj2.UI.Constants;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -15,8 +14,7 @@ import java.util.Date;
  */
 public class TrafficInfoManager {
 
-<<<<<<< HEAD
-    public static double[][] getDataPerDay (Context context, Date dayInfo){
+   /* public static double[][] getDataPerDay (Context context, Date dayInfo) {
         double[][] consumptionPerDay = new double[2][Constants.DATA_PER_DAY];
         int i = 0;
 
@@ -31,7 +29,7 @@ public class TrafficInfoManager {
         cal.set(Calendar.SECOND, 59); //set seconds to 59
         float dateStop = cal.getTimeInMillis();
 
-        int j=0;
+        int j = 0;
         for (j = 0; j < Constants.DATA_PER_DAY; j++) {
             consumptionPerDay[0][j] = 0;
             consumptionPerDay[1][j] = 0;
@@ -41,14 +39,14 @@ public class TrafficInfoManager {
         SQLiteDatabase dbSource = dbAccess.getReadableDatabase();
         // read the previous value from the database
         String selectQuery = "SELECT  * FROM " + DailyFeedReaderContract.FeedEntry.TABLE_NAME + " WHERE " + DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP +
-                " >= " + dateStart + " AND " + DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP + " <= " +  dateStop + " ;";
+                " >= " + dateStart + " AND " + DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP + " <= " + dateStop + " ;";
         Cursor cursor = dbSource.rawQuery(selectQuery, null);
 
         int dateColumnIndex = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP);
         int valueIndexNetwork = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_NETWORK);
         int valueIndexWifi = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_VOLUME_WIFI);
 
-        if(cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
             do {
                 cal.setTimeInMillis(cursor.getLong(dateColumnIndex));
                 j = cal.get(Calendar.HOUR_OF_DAY);
@@ -57,7 +55,8 @@ public class TrafficInfoManager {
             } while (cursor.moveToNext());
         }
         return consumptionPerDay;
-=======
+    }
+    */
      public static double[][] getDataPerDay (Context context, Date dayInfo){
          double[][] consumptionPerDay = new double[2][Constants.DATA_PER_DAY];
          int i = 0;
@@ -99,7 +98,6 @@ public class TrafficInfoManager {
                  } while (cursor.moveToNext());
              }
          return consumptionPerDay;
->>>>>>> 36b56133fa70e91a192854fdfd862f502f88b10f
     }
 
     public static double[][] getDataPerWeek (Context context, Date dayInfo){
