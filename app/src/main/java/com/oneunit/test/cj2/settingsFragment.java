@@ -15,7 +15,7 @@ import android.widget.Toast;
 /**
  * Created by Bishal on 10/20/2015.
  */
-public class settingsFragment extends Fragment {
+public class SettingsFragment extends Fragment {
 
     Spinner spinner;
     Spinner languageSpinner;

@@ -85,23 +85,23 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //Toast.makeText(this,myAdapter.menu[position]+"was selected",Toast.LENGTH_SHORT).show();
         selectItem(position);
-        Fragment fragment = new usageFragment();
+        Fragment fragment = new UsageFragment();
         switch (position){
             case 0:
-                fragment = new usageFragment();
+                fragment = new UsageFragment();
                 break;
             case 1:
-                fragment = new settingsFragment();
+                fragment = new SettingsFragment();
                 break;
             case 2:
-                fragment = new contactFragment();
+                fragment = new ContactFragment();
                 break;
             case 3:
-                Intent intent = new Intent(this, comparisonFragment.class);
+                Intent intent = new Intent(this, ComparisonFragment.class);
                 startActivity(intent);
                 break;
             default:
-                fragment = new usageFragment();
+                fragment = new UsageFragment();
                 break;
 
         }

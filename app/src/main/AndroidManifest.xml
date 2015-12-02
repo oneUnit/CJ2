@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".comparisonFragment"></activity>
+        <activity android:name=".ComparisonFragment"></activity>
 
         <service android:name="TrafficReadoutService" />
         <receiver android:name="PlanScheduler"></receiver>

@@ -28,7 +28,7 @@ import java.util.Date;
 /**
  * Created by Bishal on 10/16/2015.
  */
-public class usageFragment extends Fragment {
+public class UsageFragment extends Fragment {
 
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;

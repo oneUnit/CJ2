@@ -8,7 +8,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class comparisonFragment extends Activity {
+public class ComparisonFragment extends Activity {
 
     TextView textViewMyPlan[], textViewBestPlan[];
 
