@@ -1,0 +1,21 @@
+4
+WebSession Basic
+200
+0.025
+4.99
+7.2
+WebSession S
+1024
+0.015
+14.99
+7.2
+WebSession M
+3072
+0.0081
+24.99
+7.2
+Websession L
+5120
+0.0068
+34.99
+7.2

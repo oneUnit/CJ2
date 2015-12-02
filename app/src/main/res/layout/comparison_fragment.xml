@@ -60,6 +60,30 @@
     </TableRow>
     <TableRow
         android:layout_height="wrap_content"
+        android:id="@+id/tableRow_name"
+        android:layout_width="match_parent">
+        <TextView
+            android:text="Name"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/textColorblack"></TextView>
+        <TextView
+            android:id="@+id/tarifNameView"
+            android:text="xxxx"
+            android:gravity="center_horizontal"
+            android:layout_span="2"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@+id/bestTarifNameView"
+            android:gravity="center_horizontal"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+    <TableRow>
+        <TextView />
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
         android:id="@+id/tableRow3"
         android:layout_width="match_parent">
         <TextView
@@ -140,12 +164,12 @@
             android:gravity="center"
             android:textColor="@color/textColorblack"></TextView>
         <TextView
-            android:text="xxxx"
+            android:text="3g"
             android:id="@+id/tarifTypeView"
             android:gravity="center_horizontal"
             android:layout_span="2"></TextView>
         <TextView
-            android:text="xxxx"
+            android:text="3g"
             android:id="@+id/bestTarifTypeView"
             android:gravity="center_horizontal"
             android:layout_column="4"></TextView>
