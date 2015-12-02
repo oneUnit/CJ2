@@ -1,10 +1,10 @@
 package com.oneunit.test.cj2;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -19,13 +19,19 @@ public class WelcomeDialog extends Dialog {
     private Button button;
     private Spinner spinner;
     private String tariffNames[];
+    private Context context;
+
+    private Config config;
+
     public WelcomeDialog(Context context) {
         super(context);
-        setOwnerActivity((Activity) context);
+        this.context = context;
         try {
             this.tariffNames = new TariffHandler(context).getTariffNames();
+            this.config = new Config(context);
         }
         catch (IOException e){
+            e.printStackTrace();
         }
     }
 
@@ -36,7 +42,7 @@ public class WelcomeDialog extends Dialog {
         setContentView(R.layout.welcome_dialog);
         this.setCanceledOnTouchOutside(false);
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getOwnerActivity(),
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this.context,
                 R.layout.support_simple_spinner_dropdown_item, this.tariffNames);
         arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
 
@@ -44,5 +50,19 @@ public class WelcomeDialog extends Dialog {
         this.spinner.setAdapter(arrayAdapter);
         this.spinner.setPrompt("Choose Tariff");
         this.spinner.setSelection(0);
+
+        this.button = (Button) findViewById(R.id.welcome_button);
+        this.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    config.createConfigFile();
+                }
+                catch (IOException e){
+
+                }
+                dismiss();
+            }
+        });
     }
 }

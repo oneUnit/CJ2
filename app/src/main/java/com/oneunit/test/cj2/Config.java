@@ -24,6 +24,11 @@ public class Config {
     private final String FILE_FORMAT = "UTF8";
     static final String CONFIG_FIRST_USE = "first_use";
     static final String CONFIG_SEND_DATA = "send_data";
+    static final String CONFIG_PLAN_NAME = "plan_name";
+    static final String CONFIG_PLAN_LIMIT = "plan_limit";
+    static final String CONFIG_PLAN_COST_PER_MB = "plan_per_mb";
+    static final String CONFIG_PLAN_COST = "cost";
+    static final String CONFIG_PRICE = "price";
     private BufferedReader reader;
     private BufferedWriter writer;
 
@@ -31,20 +36,26 @@ public class Config {
 
     public Config(Context context)throws IOException{
         this.context = context;
-        if(isEmpty()){
-            this.createConfigFile();
-        }
     }
 
-    public boolean isEmpty() throws IOException{
-
-
-        this.reader = new BufferedReader(new InputStreamReader(context.openFileInput(FILE)));
-        if(this.reader.readLine() == null){
+    public boolean isEmpty(){
+        try {
+            this.reader = new BufferedReader(new InputStreamReader(context.openFileInput(FILE)));
             this.reader.close();
-            return true;
+            return false;
         }
-        this.reader.close();
+        catch (IOException e){
+            try {
+                this.writer = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(FILE, Context.MODE_PRIVATE)));
+                this.writer.flush();
+                this.writer.close();
+                this.createConfigFile();
+                return true;
+            }
+            catch (IOException e1){
+                e.printStackTrace();
+            }
+        }
         return false;
 
     }
@@ -71,7 +82,7 @@ public class Config {
         this.reader = new BufferedReader(new InputStreamReader(context.openFileInput(FILE)));
         String result[] = new String[0];
         String temp = "";
-        while(!(temp = this.reader.readLine()).equals(null)){
+        while((temp = this.reader.readLine()) != null){
             String tempResult[] = result;
             result = new String[result.length + 1];
             for(int i =0 ; i < tempResult.length; i++){
@@ -84,14 +95,17 @@ public class Config {
     }
 
     public void createConfigFile() throws IOException{
-        if(!isEmpty()) {
-            throw new IOException("File Already Exists");
-        }
         this.writer = new BufferedWriter(new OutputStreamWriter(context.openFileOutput(FILE, Context.MODE_PRIVATE)));
         this.writer.write(Config.CONFIG_FIRST_USE + "=1");
         this.writer.newLine();
         this.writer.write(Config.CONFIG_SEND_DATA + "=1");
+        TariffHandler tariffHandler = new TariffHandler(context);
+        String defTariff[] = tariffHandler.getTariff(2);
         this.writer.newLine();
+        for(int i = 0; i < defTariff.length; i++){
+            this.writer.write(defTariff[i]);
+            this.writer.newLine();
+        }
         this.writer.flush();
         this.writer.close();
     }
