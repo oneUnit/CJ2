@@ -169,7 +169,7 @@ public class usageFragment extends Fragment {
         }
         for (int j = 0; j < displayPointsNum; j++) {
             seriesNetwork.appendData(new DataPoint(j, measuredData[0][j]), true, displayPointsNum);
-            seriesWifi.appendData(new DataPoint(j, measuredData[0][j]), true, displayPointsNum);
+            seriesWifi.appendData(new DataPoint(j, measuredData[0][j]), true, displayPointsNum); // @TODO measuredData[1][j]
         }
         graph.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
         seriesWifi.setColor(Color.RED);
