@@ -14,7 +14,7 @@
         <fragment
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:name="com.oneunit.test.cj2.usageFragment"
+            android:name="com.oneunit.test.cj2.UsageFragment"
             android:id="@+id/fragment"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"

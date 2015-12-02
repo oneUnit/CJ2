@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 /**
  * Created by Bishal on 10/16/2015.
  */
-public class contactFragment extends Fragment {
+public class ContactFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
