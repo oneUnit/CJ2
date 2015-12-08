@@ -20,7 +20,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:text="70"
-            android:textSize="50dp"
+            android:textSize="30dp"
             />
 
         <Spinner
@@ -39,7 +39,7 @@
             android:layout_marginLeft="80dp"
             android:text="@string/megabits"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="50dp"
+            android:textSize="30dp"
             />
     </RelativeLayout>
 

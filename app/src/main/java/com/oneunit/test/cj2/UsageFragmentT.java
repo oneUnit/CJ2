@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GridLabelRenderer;
+import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -35,10 +36,15 @@ public class UsageFragment extends Fragment {
     private int displayPointsNum = 0;
     private Date selectedDisplayDate = new Date();
     private TextView dateIndicator;
+    private TextView totalIndicator;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
     GraphView graph;
     private  Config config;
 
+    private long yAxisMin = 0;
+    private long yAxisMaxDay = 1024;
+    private long yAxisMaxWeekly = 7 * yAxisMaxDay;
+    private long yAxisMaxMonthly = 31 * yAxisMaxDay;
     Button dateChangeLeft, dateChangeRight;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -63,6 +69,7 @@ public class UsageFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         dateIndicator = (TextView) view.findViewById(R.id.dataDate);
+        totalIndicator = (TextView) view.findViewById(R.id.totalVolumeNum);
         dateIndicator.setText(dateFormat.format(new Date()));
 
         dateChangeLeft = (Button) view.findViewById(R.id.dateBeforeBtn);
@@ -72,7 +79,14 @@ public class UsageFragment extends Fragment {
             public void onClick(View v){
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(selectedDisplayDate);
-                cal.add(Calendar.DAY_OF_MONTH, -1);
+                int selectedDropdownOption = spinner.getSelectedItemPosition();
+                if (selectedDropdownOption == 0){
+                    cal.add(Calendar.DAY_OF_MONTH, -1);
+                } else if(selectedDropdownOption == 1){
+                    cal.add(Calendar.DAY_OF_MONTH, -7);
+                } else if(selectedDropdownOption == 2){
+                    cal.add(Calendar.MONTH, -1);
+                }
                 selectedDisplayDate = cal.getTime();
                 dateIndicator.setText(dateFormat.format(selectedDisplayDate));
                 updateChart();
@@ -83,7 +97,14 @@ public class UsageFragment extends Fragment {
             public void onClick(View v){
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(selectedDisplayDate);
-                cal.add(Calendar.DAY_OF_MONTH, 1);
+                int selectedDropdownOption = spinner.getSelectedItemPosition();
+                if (selectedDropdownOption == 0){
+                    cal.add(Calendar.DAY_OF_MONTH, 1);
+                } else if(selectedDropdownOption == 1){
+                    cal.add(Calendar.DAY_OF_MONTH, 7);
+                } else if(selectedDropdownOption == 2){
+                    cal.add(Calendar.MONTH, 1);
+                }
                 selectedDisplayDate = cal.getTime();
                 dateIndicator.setText(dateFormat.format(selectedDisplayDate));
                 updateChart();
@@ -142,8 +163,12 @@ public class UsageFragment extends Fragment {
         GridLabelRenderer gridLabel = graph.getGridLabelRenderer();
         StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
 
-        staticLabelsFormatter.setVerticalLabels(new String[]{"0 MB", "250 MB", "500 MB"});
+        //staticLabelsFormatter.setVerticalLabels(new String[]{"0 MB", "250 MB", "500 MB"});
 
+        //graph.getGridLabelRenderer().setNumHorizontalLabels(4); // only 4 because of the space
+
+
+        //graph.getViewport().setMinY(yAxisMin);
 
         LineGraphSeries<DataPoint> seriesNetwork = new LineGraphSeries<DataPoint>();
         LineGraphSeries<DataPoint> seriesWifi = new LineGraphSeries<DataPoint>();
@@ -154,26 +179,41 @@ public class UsageFragment extends Fragment {
             displayPointsNum = Constants.DATA_PER_DAY;
             measuredData = TrafficInfoManager.getDataPerDay(getActivity(), selectedDisplayDate);
             gridLabel.setHorizontalAxisTitle("Hours");
+            // set manual y bounds to have nice steps
+            //graph.getViewport().setMaxY(yAxisMaxDay);
+            graph.getViewport().setXAxisBoundsManual(true);
             staticLabelsFormatter.setHorizontalLabels(new String[]{"00", "02", "04", "06", "08", "10", "12", "14", "16", "18", "20", "22"});
         } else if (selectedDropdownOption == 1) {
             displayPointsNum = Constants.DATA_PER_WEEK;
             measuredData = TrafficInfoManager.getDataPerWeek(getActivity(), selectedDisplayDate);
             gridLabel.setHorizontalAxisTitle("Week days");
+            //graph.getViewport().setMaxY(yAxisMaxWeekly);
             staticLabelsFormatter.setHorizontalLabels(new String[]{"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"});
         } else if (selectedDropdownOption == 2) {
             displayPointsNum = Constants.DATA_PER_MONTH;
             measuredData = TrafficInfoManager.getDataPerMonth(getActivity(), selectedDisplayDate);
             gridLabel.setHorizontalAxisTitle("Days");
+            //graph.getViewport().setMaxY(yAxisMaxMonthly);
             staticLabelsFormatter.setHorizontalLabels(new String[]{"01", "04", "07", "10", "13", "16", "19", "21", "24", "27", "30"});
 
         }
         for (int j = 0; j < displayPointsNum; j++) {
             seriesNetwork.appendData(new DataPoint(j, measuredData[0][j]), true, displayPointsNum);
-            seriesWifi.appendData(new DataPoint(j, measuredData[0][j]), true, displayPointsNum); // @TODO measuredData[1][j]
+            seriesWifi.appendData(new DataPoint(j, measuredData[1][j]), true, displayPointsNum);
         }
         graph.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
         seriesWifi.setColor(Color.RED);
         graph.addSeries(seriesNetwork);
         graph.addSeries(seriesWifi);
+
+        updateTotal(measuredData);
+    }
+
+    private void updateTotal(double[][] measuredData){
+        double sum = 0;
+        for (int i = 0; i < measuredData[0].length; i++){
+            sum += measuredData[0][i];
+        }
+        totalIndicator.setText(Integer.toString((int)sum));
     }
 }
