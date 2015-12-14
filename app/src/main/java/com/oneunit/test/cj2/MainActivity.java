@@ -1,10 +1,12 @@
 package com.oneunit.test.cj2;
 
+import android.app.ActionBar;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
@@ -12,6 +14,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.TypefaceSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +35,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     private Context context;
 
     private Config config;
+    Typeface font;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,12 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
         getSupportActionBar().setHomeButtonEnabled(true); //enables the home button...
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //enables the icon for the home button...
+        SpannableString s = new SpannableString("My Title");
+        s.setSpan(new TypefaceSpan("fonts/Oswald-DemiBold.ttf"), 0, s.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        // Update the action bar title with the TypefaceSpan instance
+        getSupportActionBar().setTitle(s);
 
         this.context = this;
         Intent alarm = new Intent(this.context, PlanScheduler.class);
@@ -99,6 +111,9 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             case 3:
                 Intent intent = new Intent(this, ComparisonFragment.class);
                 startActivity(intent);
+                break;
+            case 4:
+                fragment = new BestTarifFragment();
                 break;
             default:
                 fragment = new UsageFragment();

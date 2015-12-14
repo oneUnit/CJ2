@@ -1,6 +1,8 @@
 package com.oneunit.test.cj2;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +13,8 @@ import android.widget.TextView;
 class MyAdapter extends BaseAdapter {
     private Context context;
     String[] menu;
-    int[] images = {R.drawable.ic_usage, R.drawable.ic_settings, R.drawable.ic_contact, R.drawable.ic_team};
+    Activity a;
+    int[] images = {R.drawable.ic_usage, R.drawable.ic_settings, R.drawable.ic_contact, R.drawable.ic_team,R.drawable.ic_team};
     public MyAdapter(Context context){
         this.context=context;
         menu=context.getResources().getStringArray(R.array.menu);
@@ -46,6 +49,10 @@ class MyAdapter extends BaseAdapter {
         //assign the data...
         titleTextView.setText(menu[position]);
         titleImageView.setImageResource(images[position]);
+
+        Typeface typeface = Typeface.createFromAsset( context.getAssets(), "fonts/Oswald-DemiBold.ttf");
+        TextView textview=(TextView)row.findViewById(R.id.textView);
+        textview.setTypeface(typeface);
         return row;
     }
 }

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<TableLayout
+
+    android:id="@+id/tableLayout1"
+    android:background="#FFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
+
+    <TableRow
+
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:background="#999">
+        <TextView
+            android:id="@+id/textView0"
+            android:layout_margin="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textSize="25dp"
+            android:text="Top 10 Tarifs"
+            android:gravity="center"
+            android:layout_span="6"
+            android:layout_column="0"
+            android:textColor="@color/textColorblack"
+            android:padding="10dp"></TextView>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/table_Row_1"
+        android:layout_width="match_parent"
+        android:layout_margin="3dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="#1B5E20">
+        <TextView
+            android:text="Tarif 1"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_span="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/table_Row_2"
+        android:layout_width="match_parent"
+        android:layout_margin="3dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="#1B5E20"
+        >
+        <TextView
+            android:text="Tarif 2"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_span="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/table_Row_3"
+        android:layout_width="match_parent"
+        android:layout_margin="3dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="#1B5E20">
+        <TextView
+            android:text="Tarif 3"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_span="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/table_Row_4"
+        android:layout_width="match_parent"
+        android:layout_margin="3dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="#ffa500">
+        <TextView
+            android:text="Tarif 4"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_span="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/table_Row_5"
+        android:layout_width="match_parent"
+        android:layout_margin="3dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="#ffa500">
+        <TextView
+            android:text="Tarif 5"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_span="3"></TextView>
+        <TextView
+            android:text="xxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="3"></TextView>
+        <TextView
+            android:text="xxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/table_Row_6"
+        android:layout_width="match_parent"
+        android:layout_margin="3dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="#ffa500">
+        <TextView
+            android:text="Tarif 6"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_span="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/table_Row_7"
+        android:layout_width="match_parent"
+        android:layout_margin="3dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="#ffa500">
+        <TextView
+            android:text="Tarif 7"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_span="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/table_Row_8"
+        android:layout_width="match_parent"
+        android:layout_margin="3dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="#ff0000">
+        <TextView
+            android:text="Tarif 8"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_span="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/table_Row_9"
+        android:layout_width="match_parent"
+        android:layout_margin="3dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="#ff0000">
+        <TextView
+            android:text="Tarif 9"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_span="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:id="@+id/table_Row_10"
+        android:layout_width="match_parent"
+        android:layout_margin="3dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="#ff0000">
+        <TextView
+            android:text="Tarif 10"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_span="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="3"></TextView>
+        <TextView
+            android:text="xxxx"
+            android:id="@null"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:layout_column="4"></TextView>
+
+    </TableRow>
+
+
+</TableLayout>
+</ScrollView>

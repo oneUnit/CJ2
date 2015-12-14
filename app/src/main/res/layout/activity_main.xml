@@ -23,7 +23,7 @@
     <ListView
         android:id="@+id/drawerList"
         android:background="@color/drawerbackground_color"
-        android:divider="#FFEF00"
+        android:divider="#FFFFFF"
         android:dividerHeight="2dp"
         android:layout_width="240dp"
         android:layout_height="match_parent"
