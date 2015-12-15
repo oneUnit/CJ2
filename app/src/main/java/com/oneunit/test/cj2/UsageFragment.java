@@ -181,20 +181,20 @@ public class UsageFragment extends Fragment {
             gridLabel.setHorizontalAxisTitle("Hours");
             // set manual y bounds to have nice steps
             //graph.getViewport().setMaxY(yAxisMaxDay);
-            graph.getViewport().setXAxisBoundsManual(true);
-            staticLabelsFormatter.setHorizontalLabels(new String[]{"00", "02", "04", "06", "08", "10", "12", "14", "16", "18", "20", "22"});
+            //graph.getViewport().setXAxisBoundsManual(true);
+            //staticLabelsFormatter.setHorizontalLabels(new String[]{"00", "02", "04", "06", "08", "10", "12", "14", "16", "18", "20", "22"});
         } else if (selectedDropdownOption == 1) {
             displayPointsNum = Constants.DATA_PER_WEEK;
             measuredData = TrafficInfoManager.getDataPerWeek(getActivity(), selectedDisplayDate);
             gridLabel.setHorizontalAxisTitle("Week days");
             //graph.getViewport().setMaxY(yAxisMaxWeekly);
-            staticLabelsFormatter.setHorizontalLabels(new String[]{"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"});
+            //staticLabelsFormatter.setHorizontalLabels(new String[]{"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"});
         } else if (selectedDropdownOption == 2) {
             displayPointsNum = Constants.DATA_PER_MONTH;
             measuredData = TrafficInfoManager.getDataPerMonth(getActivity(), selectedDisplayDate);
             gridLabel.setHorizontalAxisTitle("Days");
             //graph.getViewport().setMaxY(yAxisMaxMonthly);
-            staticLabelsFormatter.setHorizontalLabels(new String[]{"01", "04", "07", "10", "13", "16", "19", "21", "24", "27", "30"});
+            //staticLabelsFormatter.setHorizontalLabels(new String[]{"01", "04", "07", "10", "13", "16", "19", "21", "24", "27", "30"});
 
         }
         for (int j = 0; j < displayPointsNum; j++) {

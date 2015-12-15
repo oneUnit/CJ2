@@ -234,4 +234,40 @@ public class TrafficInfoManager {
         }
         return consumptionPerMonth;
     }
+
+    // returns a two dimensional array of monthly data consumption for each month
+    // from the launch of the program until the latest available month
+    // index [][0] - network data
+    // index [][1] - wifi data
+    public static double[][] getDataAllMonthly (Context context) {
+        Calendar calNow = Calendar.getInstance();
+        int monthNow = Calendar.MONTH;
+        Calendar calThen = Calendar.getInstance();
+        int monthThen = 0;
+        DailyFeedReaderDbHelper dbAccess = new DailyFeedReaderDbHelper(context);
+        SQLiteDatabase dbSource = dbAccess.getReadableDatabase();
+        String selectQuery = "SELECT * FROM " + DailyFeedReaderContract.FeedEntry.TABLE_NAME +" ;";
+        Cursor cursor = dbSource.rawQuery(selectQuery, null);
+        int dateColumnIndex = cursor.getColumnIndex(DailyFeedReaderContract.FeedEntry.COLUMN_NAME_TIMESTAMP);
+        if (cursor.moveToFirst()) {
+            calThen.setTimeInMillis(Double.doubleToLongBits(cursor.getDouble(dateColumnIndex)));
+            monthThen = Calendar.MONTH;
+        } else {
+            monthThen = monthNow;
+        }
+
+        double[][] result = new double[2][monthNow - monthThen];
+        int i = 0;
+        double[] monthly;
+        while ((monthNow - monthThen) > 0){
+            monthly = getUsageForMonth(context, new Date(calNow.getTimeInMillis()));
+            result[0][i] = monthly[0];
+            result[1][i] = monthly[1];
+            monthThen++;
+            calThen.add(Calendar.MONTH, 1);
+            i++;
+        }
+
+        return result;
+    }
 }
