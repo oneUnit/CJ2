@@ -41,8 +41,8 @@ public class TrafficReadoutService extends Service{
         // TODO
         // collect consupmtion information
         TrafficStats trSt = new TrafficStats();
-        double totalBytesMobile = trSt.getMobileRxBytes() + trSt.getMobileTxBytes();
-        double totalBytesWifi = trSt.getTotalRxBytes() + trSt.getTotalTxBytes() - totalBytesMobile;
+        double totalBytesMobile = TrafficStats.getMobileRxBytes() + TrafficStats.getMobileTxBytes();
+        double totalBytesWifi = TrafficStats.getTotalRxBytes() + TrafficStats.getTotalTxBytes() - totalBytesMobile;
         DailyFeedReaderDbHelper dbAccess = new DailyFeedReaderDbHelper(TrafficReadoutService.this);
 
         SQLiteDatabase dbSource = dbAccess.getReadableDatabase();
@@ -57,6 +57,15 @@ public class TrafficReadoutService extends Service{
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         previousDataNetwork = preferences.getFloat("TrafficStatsNetwork", (float)totalBytesMobile);
         previousDataWifi = preferences.getFloat("TrafficStatsWifi", (float)totalBytesWifi);
+
+        // countering the TrafficStats bug that occurs when the phone or user switches from mobile network into wifi
+        // which results in the TrafficStats object resetting the MobileRXBytes and MobileTXBytes counters
+        // and decrementing the TotalRxBytes and TotalTxBytes by those amounts
+        if (previousDataNetwork > totalBytesMobile){
+            // the switch has ocurred sometime within the observational hour
+            totalBytesWifi += previousDataNetwork;
+            previousDataNetwork = 0;
+        }
 
         SQLiteDatabase dbSourceWrite = dbAccess.getWritableDatabase();
 

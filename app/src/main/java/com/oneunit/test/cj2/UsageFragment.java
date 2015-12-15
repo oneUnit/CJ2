@@ -82,4 +82,66 @@ public class UsageFragment extends Fragment {
 
         return view;
     }
+<<<<<<< HEAD
 }
+=======
+
+    private void updateChart(){
+        GridLabelRenderer gridLabel = graph.getGridLabelRenderer();
+        StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
+
+        //staticLabelsFormatter.setVerticalLabels(new String[]{"0 MB", "250 MB", "500 MB"});
+
+        //graph.getGridLabelRenderer().setNumHorizontalLabels(4); // only 4 because of the space
+
+
+        //graph.getViewport().setMinY(yAxisMin);
+
+        LineGraphSeries<DataPoint> seriesNetwork = new LineGraphSeries<DataPoint>();
+        LineGraphSeries<DataPoint> seriesWifi = new LineGraphSeries<DataPoint>();
+        graph.removeAllSeries();
+        int selectedDropdownOption = spinner.getSelectedItemPosition();
+        double[][] measuredData = new double[2][];
+        if (selectedDropdownOption == 0) {
+            displayPointsNum = Constants.DATA_PER_DAY;
+            measuredData = TrafficInfoManager.getDataPerDay(getActivity(), selectedDisplayDate);
+            gridLabel.setHorizontalAxisTitle("Hours");
+            // set manual y bounds to have nice steps
+            //graph.getViewport().setMaxY(yAxisMaxDay);
+            //graph.getViewport().setXAxisBoundsManual(true);
+            //staticLabelsFormatter.setHorizontalLabels(new String[]{"00", "02", "04", "06", "08", "10", "12", "14", "16", "18", "20", "22"});
+        } else if (selectedDropdownOption == 1) {
+            displayPointsNum = Constants.DATA_PER_WEEK;
+            measuredData = TrafficInfoManager.getDataPerWeek(getActivity(), selectedDisplayDate);
+            gridLabel.setHorizontalAxisTitle("Week days");
+            //graph.getViewport().setMaxY(yAxisMaxWeekly);
+            //staticLabelsFormatter.setHorizontalLabels(new String[]{"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"});
+        } else if (selectedDropdownOption == 2) {
+            displayPointsNum = Constants.DATA_PER_MONTH;
+            measuredData = TrafficInfoManager.getDataPerMonth(getActivity(), selectedDisplayDate);
+            gridLabel.setHorizontalAxisTitle("Days");
+            //graph.getViewport().setMaxY(yAxisMaxMonthly);
+            //staticLabelsFormatter.setHorizontalLabels(new String[]{"01", "04", "07", "10", "13", "16", "19", "21", "24", "27", "30"});
+
+        }
+        for (int j = 0; j < displayPointsNum; j++) {
+            seriesNetwork.appendData(new DataPoint(j, measuredData[0][j]), true, displayPointsNum);
+            seriesWifi.appendData(new DataPoint(j, measuredData[1][j]), true, displayPointsNum);
+        }
+        graph.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
+        seriesWifi.setColor(Color.RED);
+        graph.addSeries(seriesNetwork);
+        graph.addSeries(seriesWifi);
+
+        updateTotal(measuredData);
+    }
+
+    private void updateTotal(double[][] measuredData){
+        double sum = 0;
+        for (int i = 0; i < measuredData[0].length; i++){
+            sum += measuredData[0][i];
+        }
+        totalIndicator.setText(Integer.toString((int)sum));
+    }
+}
+>>>>>>> 56dc7a826432483e5e04396f33349f515c1111ab
