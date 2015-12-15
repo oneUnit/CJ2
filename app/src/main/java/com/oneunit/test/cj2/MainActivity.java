@@ -18,10 +18,14 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.TypefaceSpan;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 //import com.jjoe64.graphview.GraphView;
 
 public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
@@ -29,9 +33,10 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     private DrawerLayout drawerLayout; //DrawerLayout variable
     private ListView listView; //Lists of the DrawerLayout
-
+    private ListView listView2;
     private ActionBarDrawerToggle drawerListener;
     private MyAdapter myAdapter;
+    private MySecondAdapter mysecondAdapter;
     private Context context;
 
     private Config config;
@@ -44,13 +49,26 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         // GraphView graph = (GraphView) findViewById(R.id.graph);
         this.config = null;
 
+        final Button popupButton = (Button)findViewById(R.id.change_view);
+        popupButton.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v){
+                PopupMenu popupMenu = new PopupMenu(getApplicationContext(),v);
+                popupMenu.inflate(R.menu.menu_main);
+                popupMenu.show();
+            }
+
+        });
 
 
         listView = (ListView)findViewById(R.id.drawerList); //Initilize the list
+        listView2 = (ListView)findViewById(R.id.drawerList2);
         myAdapter = new MyAdapter(this);
         listView.setAdapter(myAdapter);
-        // listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menu));
+        listView2.setAdapter(mysecondAdapter);
+        //listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menu));
         listView.setOnItemClickListener(this);
+        listView2.setOnItemClickListener(this);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout); //Initilizing the drawerLayout
         drawerListener = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close){
             @Override
@@ -67,12 +85,9 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
         getSupportActionBar().setHomeButtonEnabled(true); //enables the home button...
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //enables the icon for the home button...
-        SpannableString s = new SpannableString("My Title");
-        s.setSpan(new TypefaceSpan("fonts/Oswald-DemiBold.ttf"), 0, s.length(),
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         // Update the action bar title with the TypefaceSpan instance
-        getSupportActionBar().setTitle(s);
+
 
         this.context = this;
         Intent alarm = new Intent(this.context, PlanScheduler.class);

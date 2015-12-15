@@ -10,7 +10,6 @@
         android:id="@+id/mainContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <fragment
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,6 +19,7 @@
             android:layout_centerHorizontal="true"
             tools:layout="@layout/usage_fragment" />
     </RelativeLayout>
+
     <ListView
         android:id="@+id/drawerList"
         android:background="@color/drawerbackground_color"
@@ -30,5 +30,16 @@
         android:layout_gravity="left">
 
     </ListView>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/drawerList2"
+        android:stackFromBottom="true"
+        android:background="@color/drawerbackground_color"
+        android:divider="#FFFFFF"
+        android:layout_gravity="bottom|end">
+
+    </ListView>
+
 
 </android.support.v4.widget.DrawerLayout>

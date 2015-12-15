@@ -12,23 +12,23 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-class MyAdapter extends BaseAdapter {
+class MySecondAdapter extends BaseAdapter {
     private Context context;
-    String[] menu;
+    String[] usage;
     Activity a;
-    int[] images = {R.drawable.usage, R.drawable.settings, R.drawable.contact, R.drawable.comparision,R.drawable.comparision};
-    public MyAdapter(Context context){
+    //int[] images = {R.drawable.usage, R.drawable.settings, R.drawable.contact, R.drawable.comparision,R.drawable.comparision};
+    public MySecondAdapter(Context context){
         this.context=context;
-        menu=context.getResources().getStringArray(R.array.menu);
+        usage=context.getResources().getStringArray(R.array.menu);
     }
     @Override
     public int getCount() {
-        return menu.length;
+        return usage.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return menu[position];
+        return usage[position];
     }
 
     @Override
@@ -47,10 +47,10 @@ class MyAdapter extends BaseAdapter {
         }
         //initialize the views..
         TextView titleTextView = (TextView)row.findViewById(R.id.textView);
-        ImageView titleImageView = (ImageView)row.findViewById(R.id.imageView);
+       // ImageView titleImageView = (ImageView)row.findViewById(R.id.imageView);
         //assign the data...
-        titleTextView.setText(menu[position]);
-        titleImageView.setImageResource(images[position]);
+        titleTextView.setText(usage[position]);
+        //titleImageView.setImageResource(images[position]);
 
         Typeface typeface = Typeface.createFromAsset( context.getAssets(), "fonts/Roboto-Bold.ttf");
         TextView textview=(TextView)row.findViewById(R.id.textView);

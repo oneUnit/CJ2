@@ -1,204 +1,502 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tableLayout1"
-    android:background="@color/contactbackgroundColor"
-    android:layout_marginTop="5dp"
+    android:id="@+id/compare_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:shrinkColumns="*"
-    android:stretchColumns="*">
-    <TableRow
+    android:layout_height="match_parent">
 
-        android:layout_height="wrap_content"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:gravity="center_horizontal">
+        android:layout_height="65dp"
+        android:padding="15dp"
+        android:background="#edf5fe"
+        android:id="@+id/relativeLayout">
         <TextView
             android:id="@+id/textView0"
             android:layout_margin="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:typeface="serif"
+            android:typeface="sans"
             android:textSize="25dp"
-            android:text="Compare Your Tarif"
+            android:text="Tarif Compare"
             android:gravity="center"
-            android:layout_span="6"
             android:layout_column="0"
-            android:textColor="@color/textColorblack"></TextView>
-    </TableRow>
-    <TableRow>
-        <TextView />
-    </TableRow>
-    <TableRow
-        android:id="@+id/tableRow2"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:gravity="center_horizontal">
+            android:textColor="#3c434e" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="130dp"
+        android:layout_height="320dp"
+        android:background="#803c434e"
+        android:id="@+id/relativeLayout2"
+        android:layout_below="@+id/relativeLayout">
 
-        <TextView
-            android:id="@+id/TextView1"
-            android:text="Tarif"
-            android:textStyle="bold"
-            android:typeface="serif"
-            android:gravity="center"
-            android:textSize="19dp"
-            android:layout_column="1"
-            android:textColor="@color/textColorblack"></TextView>
-        <TextView
-            android:id="@+id/TextView2"
-            android:text="Best Tarif"
-            android:textStyle="bold"
-            android:typeface="serif"
-            android:gravity="left"
-            android:textSize="19dp"
-            android:layout_column="4"
-            android:textColor="@color/textColorblack"></TextView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#CC3c434e"
+            android:layout_marginTop="2dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/category">
 
-    </TableRow>
-    <TableRow>
-        <TextView />
-    </TableRow>
-    <TableRow
-        android:layout_height="wrap_content"
-        android:id="@+id/tableRow_name"
-        android:layout_width="match_parent">
-        <TextView
-            android:text="Name"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="@color/textColorblack"></TextView>
-        <TextView
-            android:id="@+id/tarifNameView"
-            android:text="xxxx"
-            android:gravity="center_horizontal"
-            android:layout_span="2"></TextView>
-        <TextView
-            android:text="xxxx"
-            android:id="@+id/bestTarifNameView"
-            android:gravity="center_horizontal"
-            android:layout_column="4"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Category"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:id="@+id/Name"
+            android:layout_below="@+id/category"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-    </TableRow>
-    <TableRow>
-        <TextView />
-    </TableRow>
-    <TableRow
-        android:layout_height="wrap_content"
-        android:id="@+id/tableRow3"
-        android:layout_width="match_parent">
-        <TextView
-            android:text="Price Per MB"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="@color/textColorblack"></TextView>
-        <TextView
-            android:id="@+id/tarifPriceView"
-            android:text="xxxx"
-            android:gravity="center_horizontal"
-            android:layout_span="2"></TextView>
-        <TextView
-            android:text="xxxx"
-            android:id="@+id/bestTarifPriceView"
-            android:gravity="center_horizontal"
-            android:layout_column="4"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Name"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:id="@+id/price_per_mb"
+            android:layout_below="@+id/Name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-    </TableRow>
-    <TableRow>
-        <TextView />
-    </TableRow>
-    <TableRow
-        android:layout_height="wrap_content"
-        android:id="@+id/tableRow4"
-        android:layout_width="match_parent">
-        <TextView
-            android:text="Data Limit"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="@color/textColorblack"></TextView>
-        <TextView
-            android:text="xxxx"
-            android:id="@+id/tarifDataLimitView"
-            android:gravity="center_horizontal"
-            android:layout_span="2"></TextView>
-        <TextView
-            android:text="xxxx"
-            android:id="@+id/bestTarifDataLimitView"
-            android:gravity="center_horizontal"
-            android:layout_column="4"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Price Per MB"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:id="@+id/data_limit"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-    </TableRow>
-    <TableRow>
-        <TextView />
-    </TableRow>
-    <TableRow
-        android:layout_height="wrap_content"
-        android:id="@+id/tableRow5"
-        android:layout_width="match_parent">
-        <TextView
-            android:text="Speed"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="@color/textColorblack"></TextView>
-        <TextView
-            android:text="xxxx"
-            android:id="@+id/tarifSpeedView"
-            android:gravity="center_horizontal"
-            android:layout_span="2"></TextView>
-        <TextView
-            android:text="xxxx"
-            android:id="@+id/bestTarifSpeedView"
-            android:gravity="center_horizontal"
-            android:layout_column="4"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Data Limit"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:id="@+id/speed"
+            android:layout_below="@+id/data_limit"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-    </TableRow>
-    <TableRow>
-        <TextView />
-    </TableRow>
-    <TableRow
-        android:layout_height="wrap_content"
-        android:id="@+id/tableRow6"
-        android:layout_width="match_parent">
-        <TextView
-            android:text="Type"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="@color/textColorblack"></TextView>
-        <TextView
-            android:text="3g"
-            android:id="@+id/tarifTypeView"
-            android:gravity="center_horizontal"
-            android:layout_span="2"></TextView>
-        <TextView
-            android:text="3g"
-            android:id="@+id/bestTarifTypeView"
-            android:gravity="center_horizontal"
-            android:layout_column="4"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Speed"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:id="@+id/type"
+            android:layout_below="@+id/speed"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-    </TableRow>
-    <TableRow>
-        <TextView />
-    </TableRow>
-    <TableRow
-        android:layout_height="wrap_content"
-        android:id="@+id/tableRow7"
-        android:layout_width="match_parent">
-        <TextView
-            android:text="Total Cost"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="@color/textColorblack"></TextView>
-        <TextView
-            android:text="xxxx"
-            android:id="@+id/tarifTotalCostView"
-            android:gravity="center_horizontal"
-            android:layout_span="2"></TextView>
-        <TextView
-            android:text="xxxx"
-            android:id="@+id/bestTarifTotalCostView"
-            android:gravity="center_horizontal"
-            android:layout_column="4"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Type"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:id="@+id/total_cost"
+            android:layout_below="@+id/type"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-    </TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Total Cost"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
 
-</TableLayout>
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="125dp"
+        android:layout_height="355dp"
+        android:background="#80f16f27"
+        android:layout_alignTop="@+id/relativeLayout2"
+        android:layout_toRightOf="@+id/relativeLayout2"
+        android:id="@+id/relativeLayout3">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="2dp"
+            android:background="#CCf16f27"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Tarif"
+                android:typeface="serif"
+                android:id="@+id/textView17"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout6">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:id="@+id/tarifNameView"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout6"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:id="@+id/tarifPriceView"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout7"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:id="@+id/tarifDataLimitView"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout8"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout9">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:id="@+id/tarifSpeedView"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout9"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout10"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:id="@+id/tarifTotalCostView"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="130dp"
+        android:layout_height="400dp"
+        android:layout_marginRight="1dp"
+        android:background="#802e933c"
+        android:layout_alignTop="@+id/relativeLayout3"
+        android:layout_toEndOf="@+id/relativeLayout3"
+        android:layout_toRightOf="@+id/relativeLayout3">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#CC2e933c"
+            android:layout_marginTop="2dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Best Tarif"
+                android:typeface="serif"
+                android:id="@+id/textView18"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout5"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout11">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:id="@+id/bestTarifNameView"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout11"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:id="@+id/bestTarifPriceView"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout12"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout13">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:id="@+id/bestTarifDataLimitView"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout13"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:id="@+id/bestTarifSpeedView"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout14"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout15">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#803c434e"
+            android:layout_below="@+id/relativeLayout15"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="XXX"
+                android:id="@+id/bestTarifTotalCostView"
+                android:textSize="13sp"
+                android:typeface="serif"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
