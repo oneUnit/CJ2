@@ -30,16 +30,6 @@
         android:layout_gravity="left">
 
     </ListView>
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:id="@+id/drawerList2"
-        android:stackFromBottom="true"
-        android:background="@color/drawerbackground_color"
-        android:divider="#FFFFFF"
-        android:layout_gravity="bottom|end">
-
-    </ListView>
 
 
 </android.support.v4.widget.DrawerLayout>

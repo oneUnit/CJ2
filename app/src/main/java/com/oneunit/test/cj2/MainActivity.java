@@ -26,6 +26,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.RelativeLayout;
 //import com.jjoe64.graphview.GraphView;
 
 public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
@@ -33,14 +34,12 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     private DrawerLayout drawerLayout; //DrawerLayout variable
     private ListView listView; //Lists of the DrawerLayout
-    private ListView listView2;
     private ActionBarDrawerToggle drawerListener;
     private MyAdapter myAdapter;
-    private MySecondAdapter mysecondAdapter;
     private Context context;
 
     private Config config;
-    Typeface font;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,26 +48,17 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         // GraphView graph = (GraphView) findViewById(R.id.graph);
         this.config = null;
 
-        final Button popupButton = (Button)findViewById(R.id.change_view);
-        popupButton.setOnClickListener(new View.OnClickListener(){
 
-            public void onClick(View v){
-                PopupMenu popupMenu = new PopupMenu(getApplicationContext(),v);
-                popupMenu.inflate(R.menu.menu_main);
-                popupMenu.show();
-            }
-
-        });
 
 
         listView = (ListView)findViewById(R.id.drawerList); //Initilize the list
-        listView2 = (ListView)findViewById(R.id.drawerList2);
+        //listView2 = (ListView)findViewById(R.id.drawerList2);
         myAdapter = new MyAdapter(this);
         listView.setAdapter(myAdapter);
-        listView2.setAdapter(mysecondAdapter);
+        //listView2.setAdapter(mysecondAdapter);
         //listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menu));
         listView.setOnItemClickListener(this);
-        listView2.setOnItemClickListener(this);
+        //listView2.setOnItemClickListener(this);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout); //Initilizing the drawerLayout
         drawerListener = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close){
             @Override
@@ -131,7 +121,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 fragment = new BestTarifFragment();
                 break;
             default:
-                fragment = new UsageFragment();
+                //fragment = new UsageFragment();
                 break;
 
         }

@@ -7,12 +7,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GridLabelRenderer;
@@ -30,7 +34,7 @@ import java.util.Date;
 /**
  * Created by Bishal on 10/16/2015.
  */
-public class UsageFragment extends Fragment {
+public class UsageFragment extends Fragment{
 
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;
@@ -47,9 +51,19 @@ public class UsageFragment extends Fragment {
     private long yAxisMaxWeekly = 7 * yAxisMaxDay;
     private long yAxisMaxMonthly = 31 * yAxisMaxDay;
     ImageButton dateChangeLeft, dateChangeRight;
+    Button changeViewButton, dailyButton, weeklyButton, monthlyButton ;
+    boolean dailyButtonflag = true, weeklyButtonflag, montlyButtonflag;
+
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.usage_fragment,container,false);
+        View view = inflater.inflate(R.layout.usage_fragment, container, false);
+
+        final RelativeLayout change_view_layout = (RelativeLayout)view.findViewById(R.id.change_view_menu);
+        final RelativeLayout relativeLayout = (RelativeLayout)view.findViewById(R.id.layout2);
+        final ImageView dailyButtonCheck = (ImageView)view.findViewById(R.id.daily_button_check);
+        final ImageView weeklyButtonCheck = (ImageView)view.findViewById(R.id.weekly_button_check);
+        final ImageView monthlyButtonCheck = (ImageView)view.findViewById(R.id.monthly_button_check);
 
         try {
             this.config = new Config(this.getActivity());
@@ -69,23 +83,74 @@ public class UsageFragment extends Fragment {
         //adapter = ArrayAdapter.createFromResource(getActivity(),R.array.usage,android.R.layout.simple_spinner_item);
         //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //spinner.setAdapter(adapter);
-        //---dateIndicator = (TextView) view.findViewById(R.id.dataDate);
-        //--- totalIndicator = (TextView) view.findViewById(R.id.totalVolumeNum);
-        //--- dateIndicator.setText(dateFormat.format(new Date()));
+        dateIndicator = (TextView) view.findViewById(R.id.dataDate);
+        totalIndicator = (TextView) view.findViewById(R.id.totalVolumeNum);
+        dateIndicator.setText(dateFormat.format(new Date()));
 
+        changeViewButton = (Button) view.findViewById(R.id.change_view);
+        dailyButton = (Button) view.findViewById(R.id.daily_button);
+        weeklyButton = (Button) view.findViewById(R.id.weekly_button);
+        monthlyButton = (Button) view.findViewById(R.id.monthly_button);
         dateChangeLeft = (ImageButton) view.findViewById(R.id.dateBeforeBtn);
         dateChangeRight = (ImageButton) view.findViewById(R.id.dateAfterBtn);
+        //----------------------------------------------------------------------
+        dailyButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                dailyButtonflag = true;
+                weeklyButtonflag = false;
+                montlyButtonflag = false;
+                Animation slideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_down);
+                change_view_layout.startAnimation(slideDown);
+                change_view_layout.setVisibility(View.GONE);
+                dailyButtonCheck.setVisibility(View.VISIBLE);
+                weeklyButtonCheck.setVisibility(View.INVISIBLE);
+                monthlyButtonCheck.setVisibility(View.INVISIBLE);
+                updateChart();
+            }
 
+
+        });
+        weeklyButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                weeklyButtonflag = true;
+                dailyButtonflag = false;
+                montlyButtonflag = false;
+                Animation slideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_down);
+                change_view_layout.startAnimation(slideDown);
+                change_view_layout.setVisibility(View.GONE);
+                dailyButtonCheck.setVisibility(View.INVISIBLE);
+                weeklyButtonCheck.setVisibility(View.VISIBLE);
+                monthlyButtonCheck.setVisibility(View.INVISIBLE);
+                updateChart();
+            }
+
+
+        });
+        monthlyButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                montlyButtonflag = true;
+                weeklyButtonflag = false;
+                dailyButtonflag = false;
+                Animation slideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_down);
+                change_view_layout.startAnimation(slideDown);
+                change_view_layout.setVisibility(View.GONE);
+                dailyButtonCheck.setVisibility(View.INVISIBLE);
+                weeklyButtonCheck.setVisibility(View.INVISIBLE);
+                monthlyButtonCheck.setVisibility(View.VISIBLE);
+                updateChart();
+            }
+
+
+        });
         dateChangeLeft.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(selectedDisplayDate);
-                int selectedDropdownOption = spinner.getSelectedItemPosition();
-                if (selectedDropdownOption == 0){
+                if(dailyButtonflag){
                     cal.add(Calendar.DAY_OF_MONTH, -1);
-                } else if(selectedDropdownOption == 1){
+                }else if(weeklyButtonflag){
                     cal.add(Calendar.DAY_OF_MONTH, -7);
-                } else if(selectedDropdownOption == 2){
+                }else if(montlyButtonflag){
                     cal.add(Calendar.MONTH, -1);
                 }
                 selectedDisplayDate = cal.getTime();
@@ -98,12 +163,11 @@ public class UsageFragment extends Fragment {
             public void onClick(View v){
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(selectedDisplayDate);
-                int selectedDropdownOption = spinner.getSelectedItemPosition();
-                if (selectedDropdownOption == 0){
+                if (dailyButtonflag){
                     cal.add(Calendar.DAY_OF_MONTH, 1);
-                } else if(selectedDropdownOption == 1){
+                } else if(weeklyButtonflag){
                     cal.add(Calendar.DAY_OF_MONTH, 7);
-                } else if(selectedDropdownOption == 2){
+                } else if(montlyButtonflag){
                     cal.add(Calendar.MONTH, 1);
                 }
                 selectedDisplayDate = cal.getTime();
@@ -112,17 +176,34 @@ public class UsageFragment extends Fragment {
             }
         });
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                updateChart();
+        relativeLayout.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if(change_view_layout.getVisibility()== View.VISIBLE) {
+                    Animation slideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_down);
+                    change_view_layout.startAnimation(slideDown);
+                    change_view_layout.setVisibility(View.GONE);
+                }
             }
 
+        });
+        changeViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onClick(View view) {
+                Animation slideUp = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_up);
+                Animation slideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_down);
 
+                if (change_view_layout.getVisibility() == View.GONE) {
+                    change_view_layout.startAnimation(slideUp);
+                    change_view_layout.setVisibility(View.VISIBLE);
+                } else {
+                    change_view_layout.startAnimation(slideDown);
+                    change_view_layout.setVisibility(View.GONE);
+
+                }
             }
         });
+
+        updateChart();
         /***********************Data Handling************************/
 //        float[] dataArrNetwork = new float[Constants.DATA_PER_DAY];
 //        float[] dataArrWifi = new float[Constants.DATA_PER_DAY];
@@ -157,11 +238,12 @@ public class UsageFragment extends Fragment {
 //        graph.addSeries(seriesWifi);
         /*********************************************************/
 
+
+
         return view;
     }
-
     private void updateChart(){
-        GridLabelRenderer gridLabel = graph.getGridLabelRenderer();
+       // GridLabelRenderer gridLabel = graph.getGridLabelRenderer();
         StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
 
         //staticLabelsFormatter.setVerticalLabels(new String[]{"0 MB", "250 MB", "500 MB"});
@@ -174,30 +256,36 @@ public class UsageFragment extends Fragment {
         LineGraphSeries<DataPoint> seriesNetwork = new LineGraphSeries<DataPoint>();
         LineGraphSeries<DataPoint> seriesWifi = new LineGraphSeries<DataPoint>();
         graph.removeAllSeries();
-        int selectedDropdownOption = spinner.getSelectedItemPosition();
+       //---- int selectedDropdownOption = spinner.getSelectedItemPosition();
         double[][] measuredData = new double[2][];
-        if (selectedDropdownOption == 0) {
+
+        if(dailyButtonflag){
             displayPointsNum = Constants.DATA_PER_DAY;
             measuredData = TrafficInfoManager.getDataPerDay(getActivity(), selectedDisplayDate);
-            gridLabel.setHorizontalAxisTitle("Hours");
+            graph.getGridLabelRenderer().setHorizontalAxisTitle("Hours");
+           // gridLabel.setHorizontalAxisTitle("Hours");
+
             // set manual y bounds to have nice steps
             //graph.getViewport().setMaxY(yAxisMaxDay);
-            graph.getViewport().setXAxisBoundsManual(true);
+            //graph.getViewport().setXAxisBoundsManual(true);
             staticLabelsFormatter.setHorizontalLabels(new String[]{"00", "02", "04", "06", "08", "10", "12", "14", "16", "18", "20", "22"});
-        } else if (selectedDropdownOption == 1) {
+        } else if(weeklyButtonflag){
             displayPointsNum = Constants.DATA_PER_WEEK;
             measuredData = TrafficInfoManager.getDataPerWeek(getActivity(), selectedDisplayDate);
-            gridLabel.setHorizontalAxisTitle("Week days");
+            graph.getGridLabelRenderer().setHorizontalAxisTitle("Week days");
+           // gridLabel.setHorizontalAxisTitle("Week days");
+
             //graph.getViewport().setMaxY(yAxisMaxWeekly);
             staticLabelsFormatter.setHorizontalLabels(new String[]{"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"});
-        } else if (selectedDropdownOption == 2) {
+        }else if(montlyButtonflag){
             displayPointsNum = Constants.DATA_PER_MONTH;
             measuredData = TrafficInfoManager.getDataPerMonth(getActivity(), selectedDisplayDate);
-            gridLabel.setHorizontalAxisTitle("Days");
+            graph.getGridLabelRenderer().setHorizontalAxisTitle("Days");
+            //gridLabel.setHorizontalAxisTitle("Days");
             //graph.getViewport().setMaxY(yAxisMaxMonthly);
             staticLabelsFormatter.setHorizontalLabels(new String[]{"01", "04", "07", "10", "13", "16", "19", "21", "24", "27", "30"});
-
         }
+
         for (int j = 0; j < displayPointsNum; j++) {
             seriesNetwork.appendData(new DataPoint(j, measuredData[0][j]), true, displayPointsNum);
             seriesWifi.appendData(new DataPoint(j, measuredData[1][j]), true, displayPointsNum);
@@ -217,4 +305,6 @@ public class UsageFragment extends Fragment {
         }
         totalIndicator.setText(Integer.toString((int)sum));
     }
+
 }
+
