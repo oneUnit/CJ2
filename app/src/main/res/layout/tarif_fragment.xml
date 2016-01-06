@@ -1,0 +1,3352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout"
+    android:background="#FFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/top_tariffs_layout_head"
+        android:background="#edf5fe"
+        android:visibility="visible">
+        <TextView
+            android:id="@+id/tariffs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4a4c4d"
+            android:paddingBottom="19dp"
+            android:layout_marginLeft="6dp"
+            android:text="TARIFFS"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_alignTop="@+id/top"
+            android:layout_toRightOf="@+id/imageView11"
+            android:layout_toEndOf="@+id/imageView11" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView11"
+            android:background="@drawable/top_ten_taiffs_icon"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="135dp"
+            android:layout_marginStart="152dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="TOP"
+            android:id="@+id/top"
+            android:textColor="#4a4c4d"
+            android:layout_marginRight="49dp"
+            android:layout_marginEnd="49dp"
+            android:layout_alignBottom="@+id/imageView11"
+            android:layout_toLeftOf="@+id/tariffs"
+            android:layout_toStartOf="@+id/tariffs" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/comparision_layout_head"
+        android:background="#edf5fe"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView6"
+            android:background="@drawable/comparison_icon2"
+            android:layout_marginTop="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="489dp"
+        android:layout_marginTop="65dp"
+        android:id="@+id/comparision_layout_body"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:background="@drawable/compare_background_icon"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"></RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:background="#CC81828a"
+            android:id="@+id/relativeLayout24"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/compare_circle_top"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/imageView2"
+                android:layout_alignLeft="@+id/imageView2"
+                android:layout_alignStart="@+id/imageView2"
+                android:id="@+id/relativeLayout25">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Basic*"
+                    android:textSize="17sp"
+                    android:textColor="#ffffff"
+                    android:id="@+id/user_tarif_name"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9"
+                    android:textSize="50sp"
+                    android:textColor="#ffffff"
+                    android:id="@+id/user_tarif_price_euro"
+                    android:layout_below="@+id/user_tarif_name"
+                    android:layout_alignRight="@+id/user_tarif_name"
+                    android:layout_alignEnd="@+id/user_tarif_name"
+                    android:layout_marginRight="26dp"
+                    android:layout_marginEnd="26dp"
+                    android:paddingRight="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=","
+                    android:textColor="#ffffff"
+                    android:textSize="45sp"
+                    android:id="@+id/comma_seperator"
+                    android:layout_alignTop="@+id/user_tarif_price_euro"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp"
+                    android:paddingTop="7dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/comma_seperator"
+                    android:layout_toEndOf="@+id/comma_seperator"
+                    android:id="@+id/user_tarif_price_cent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="\u20ac/Mon."
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:layout_marginTop="-3dp"
+                    android:layout_below="@+id/user_tarif_price_cent"
+                    android:layout_toRightOf="@+id/comma_seperator"
+                    android:layout_toEndOf="@+id/comma_seperator" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="137dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rectangle_box_top"
+                android:layout_alignTop="@+id/relativeLayout25"
+                android:layout_toRightOf="@+id/imageView8"
+                android:layout_toEndOf="@+id/imageView8"
+                android:id="@+id/relativeLayout27">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="27dp"
+                    android:id="@+id/imageView10"
+                    android:background="@drawable/green_arrow"
+                    android:layout_marginRight="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Telefonia Flat"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="6dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:id="@+id/telefonia_flat"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="137dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rectangle_box_top"
+                android:layout_below="@+id/relativeLayout27"
+                android:layout_toRightOf="@+id/imageView8"
+                android:layout_toEndOf="@+id/imageView8"
+                android:layout_marginTop="16dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="27dp"
+                    android:id="@+id/imageView12"
+                    android:background="@drawable/green_arrow"
+                    android:layout_marginRight="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="DT.Handy Flat"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="6dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:id="@+id/dt_handy_flat"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="137dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rectangle_box_top"
+                android:layout_marginBottom="33dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/imageView8"
+                android:layout_toEndOf="@+id/imageView8">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="26dp"
+                    android:id="@+id/imageView13"
+                    android:background="@drawable/orange_arrow"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="1GB"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="6dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:id="@+id/user_internet_usage"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="(21MB/s)"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:id="@+id/user_internet_speed"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/user_internet_usage"
+                    android:layout_toEndOf="@+id/user_internet_usage" />
+            </RelativeLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:background="@drawable/user_tarif_icon"
+                android:layout_marginTop="27dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="19dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView8"
+                android:background="@drawable/branch_icon"
+                android:layout_alignTop="@+id/relativeLayout25"
+                android:layout_toRightOf="@+id/relativeLayout25"
+                android:layout_toEndOf="@+id/relativeLayout25"
+                android:layout_marginTop="27dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Your Tariff Detail"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:id="@+id/your_tarif_detail"
+                android:layout_alignTop="@+id/imageView2"
+                android:layout_toRightOf="@+id/imageView2"
+                android:layout_toEndOf="@+id/imageView2" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:background="#E6444b55"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/compare_circle_bottom"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/imageView7"
+                android:layout_alignLeft="@+id/imageView7"
+                android:layout_alignStart="@+id/imageView7"
+                android:id="@+id/relativeLayout26">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Basic*"
+                    android:textSize="17sp"
+                    android:textColor="#ffffff"
+                    android:id="@+id/suggestion_tarif_name"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="19"
+                    android:textSize="50sp"
+                    android:textColor="#ffffff"
+                    android:id="@+id/suggestion_tarif_price_euro"
+                    android:layout_below="@+id/suggestion_tarif_name"
+                    android:layout_alignRight="@+id/suggestion_tarif_name"
+                    android:layout_alignEnd="@+id/suggestion_tarif_name"
+                    android:layout_marginRight="26dp"
+                    android:layout_marginEnd="26dp"
+                    android:paddingRight="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=","
+                    android:textColor="#ffffff"
+                    android:textSize="45sp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignTop="@+id/suggestion_tarif_price_euro"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/comma_seperator2" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp"
+                    android:paddingTop="7dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/comma_seperator2"
+                    android:layout_toEndOf="@+id/comma_seperator2"
+                    android:id="@+id/suggestion_tarif_price_cent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="\u20ac/Mon."
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:layout_marginTop="-3dp"
+                    android:layout_below="@+id/suggestion_tarif_price_cent"
+                    android:layout_toRightOf="@+id/comma_seperator2"
+                    android:layout_toEndOf="@+id/comma_seperator2" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="137dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rectangle_box_bottom"
+                android:layout_marginTop="12dp"
+                android:layout_alignTop="@+id/relativeLayout26"
+                android:layout_toRightOf="@+id/imageView9"
+                android:layout_toEndOf="@+id/imageView9"
+                android:id="@+id/relativeLayout28">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="27dp"
+                    android:id="@+id/imageView14"
+                    android:background="@drawable/green_arrow"
+                    android:layout_marginRight="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Telefonia Flat"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="6dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:id="@+id/telefonia_flat2"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="137dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rectangle_box_bottom"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/relativeLayout28"
+                android:layout_toRightOf="@+id/imageView9"
+                android:layout_toEndOf="@+id/imageView9">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="27dp"
+                    android:id="@+id/imageView15"
+                    android:background="@drawable/green_arrow"
+                    android:layout_marginRight="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="DT.Handy Flat"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="6dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:id="@+id/dt_handy_flat2"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="137dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rectangle_box_bottom"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/imageView9"
+                android:layout_toEndOf="@+id/imageView9"
+                android:layout_marginBottom="33dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="27dp"
+                    android:id="@+id/imageView16"
+                    android:background="@drawable/green_arrow"
+                    android:layout_marginRight="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="2GB"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="6dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:id="@+id/suggestion_internet_usage"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="(21MB/s)"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:id="@+id/suggestion_internet_speed"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/suggestion_internet_usage"
+                    android:layout_toEndOf="@+id/suggestion_internet_usage" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView7"
+                android:background="@drawable/suggestion_icon"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="26dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView9"
+                android:background="@drawable/branch_icon"
+                android:layout_alignTop="@+id/relativeLayout26"
+                android:layout_toRightOf="@+id/relativeLayout26"
+                android:layout_toEndOf="@+id/relativeLayout26"
+                android:layout_marginTop="28dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Our Suggestion"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:id="@+id/our_suggestion"
+                android:layout_alignTop="@+id/imageView7"
+                android:layout_toRightOf="@+id/imageView7"
+                android:layout_toEndOf="@+id/imageView7" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="485dp"
+        android:layout_marginTop="65dp"
+        android:background="#444b55"
+        android:id="@+id/top_tariffs_layout_body"
+        android:visibility="visible">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator5"
+            android:background="@drawable/indicator"
+            android:layout_marginBottom="31dp"
+            android:layout_marginLeft="179dp"
+            android:layout_marginStart="178dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator_second5"
+            android:background="@drawable/indicator_second"
+
+            android:visibility="invisible"
+            android:layout_marginBottom="28dp"
+            android:layout_marginLeft="176dp"
+            android:layout_marginStart="178dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator4"
+            android:background="@drawable/indicator"
+            android:layout_marginRight="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_alignTop="@+id/indicator5"
+            android:layout_toLeftOf="@+id/indicator6"
+            android:layout_toStartOf="@+id/indicator6" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator_second4"
+            android:background="@drawable/indicator_second"
+            android:visibility="invisible"
+            android:layout_marginTop="-2dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_alignTop="@+id/indicator5"
+            android:layout_toLeftOf="@+id/indicator6"
+            android:layout_toStartOf="@+id/indicator6" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator3"
+            android:background="@drawable/indicator"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignTop="@+id/indicator4"
+            android:layout_toLeftOf="@+id/indicator4"
+            android:layout_toStartOf="@+id/indicator4" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator_second3"
+            android:background="@drawable/indicator_second"
+            android:visibility="invisible"
+            android:layout_marginTop="-2dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignTop="@+id/indicator4"
+            android:layout_toLeftOf="@+id/indicator4"
+            android:layout_toStartOf="@+id/indicator4" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator2"
+            android:background="@drawable/indicator"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignTop="@+id/indicator3"
+            android:layout_toLeftOf="@+id/indicator3"
+            android:layout_toStartOf="@+id/indicator3" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator_second2"
+            android:background="@drawable/indicator_second"
+            android:visibility="invisible"
+            android:layout_marginTop="-2dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignTop="@+id/indicator3"
+            android:layout_toLeftOf="@+id/indicator3"
+            android:layout_toStartOf="@+id/indicator3" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator1"
+            android:background="@drawable/indicator"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignTop="@+id/indicator2"
+            android:layout_toLeftOf="@+id/indicator2"
+            android:layout_toStartOf="@+id/indicator2" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator_second1"
+            android:visibility="visible"
+            android:layout_marginTop="-2dp"
+            android:background="@drawable/indicator_second"
+            android:layout_alignTop="@+id/indicator1"
+            android:layout_alignRight="@+id/indicator1"
+            android:layout_alignEnd="@+id/indicator1" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator6"
+            android:background="@drawable/indicator"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignTop="@+id/indicator5"
+            android:layout_toRightOf="@+id/indicator5"
+            android:layout_toEndOf="@+id/indicator5" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator_second6"
+            android:background="@drawable/indicator_second"
+            android:layout_marginTop="-2dp"
+            android:visibility="invisible"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignTop="@+id/indicator5"
+            android:layout_toRightOf="@+id/indicator5"
+            android:layout_toEndOf="@+id/indicator5" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator7"
+            android:background="@drawable/indicator"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignTop="@+id/indicator6"
+            android:layout_toRightOf="@+id/indicator6"
+            android:layout_toEndOf="@+id/indicator6" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator_second7"
+            android:background="@drawable/indicator_second"
+            android:layout_marginTop="-2dp"
+            android:visibility="invisible"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignTop="@+id/indicator6"
+            android:layout_toRightOf="@+id/indicator6"
+            android:layout_toEndOf="@+id/indicator6" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator8"
+            android:background="@drawable/indicator"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignTop="@+id/indicator7"
+            android:layout_toRightOf="@+id/indicator7"
+            android:layout_toEndOf="@+id/indicator7" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator_second8"
+            android:background="@drawable/indicator_second"
+            android:layout_marginTop="-2dp"
+            android:visibility="invisible"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignTop="@+id/indicator7"
+            android:layout_toRightOf="@+id/indicator7"
+            android:layout_toEndOf="@+id/indicator7" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator9"
+            android:background="@drawable/indicator"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignTop="@+id/indicator8"
+            android:layout_toRightOf="@+id/indicator8"
+            android:layout_toEndOf="@+id/indicator8" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator_second9"
+            android:background="@drawable/indicator_second"
+            android:layout_marginTop="-2dp"
+            android:visibility="invisible"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignTop="@+id/indicator8"
+            android:layout_toRightOf="@+id/indicator8"
+            android:layout_toEndOf="@+id/indicator8" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator10"
+            android:background="@drawable/indicator"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignTop="@+id/indicator9"
+            android:layout_toRightOf="@+id/indicator9"
+            android:layout_toEndOf="@+id/indicator9" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/indicator_second10"
+            android:background="@drawable/indicator_second"
+            android:layout_marginTop="-2dp"
+            android:visibility="invisible"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignTop="@+id/indicator9"
+            android:layout_toRightOf="@+id/indicator9"
+            android:layout_toEndOf="@+id/indicator9" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leftArrow"
+            android:background="@drawable/left_bottom_arrow"
+            android:layout_toLeftOf="@+id/indicator1"
+            android:layout_toStartOf="@+id/indicator1"
+            android:layout_marginRight="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="-5dp"
+            android:layout_alignTop="@+id/indicator1" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rightArrow"
+            android:background="@drawable/right_bottom_arrow"
+            android:layout_alignTop="@+id/leftArrow"
+            android:layout_toRightOf="@+id/indicator10"
+            android:layout_toEndOf="@+id/indicator10"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="165dp"
+        android:layout_height="40dp"
+        android:id="@+id/middlelayout"
+        android:layout_marginTop="45dp"
+        android:background="#be0830"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/change_view"
+            android:background="@drawable/change_view_button"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+
+    <!-- .................................................................................... -->
+
+
+    <!-- .................................................................................... -->
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#82828a"
+            android:id="@+id/relative_Layout1"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Special*"
+
+                android:id="@+id/tarif_name_1"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#d8d6db"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="4"
+
+            android:id="@+id/tarif_price_euro1"
+
+            android:textSize="50sp"
+            android:textColor="#fffdfe"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/relative_Layout1"
+            android:layout_toLeftOf="@+id/comma"
+            android:layout_toStartOf="@+id/comma" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=","
+            android:textSize="50sp"
+            android:id="@+id/comma"
+            android:textColor="#fffdfe"
+            android:layout_alignBaseline="@+id/tarif_price_euro1"
+            android:layout_alignBottom="@+id/tarif_price_euro1"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="99"
+            android:textSize="20sp"
+
+            android:id="@+id/tarif_price_cent1"
+
+            android:textColor="#fffdfe"
+            android:layout_alignTop="@+id/comma"
+            android:layout_toRightOf="@+id/comma"
+            android:layout_toEndOf="@+id/comma"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="\u20ac/Mon."
+            android:id="@+id/price_per_month"
+            android:textColor="#fffdfe"
+            android:layout_below="@+id/tarif_price_cent1"
+            android:layout_toRightOf="@+id/comma"
+            android:layout_toEndOf="@+id/comma" />
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_below="@+id/tarif_price_euro1"
+            android:layout_alignLeft="@+id/relative_Layout1"
+            android:layout_alignStart="@+id/relative_Layout1"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/relative_Layout2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Festnetz"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_festnetz1"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_festnetz1"
+                android:layout_toRightOf="@+id/flat_festnetz1"
+                android:layout_toEndOf="@+id/flat_festnetz1"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/relative_Layout2"
+            android:layout_alignLeft="@+id/relative_Layout2"
+            android:layout_alignStart="@+id/relative_Layout2"
+            android:id="@+id/relative_Layout3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Alle dt. Handy-Netze"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_alle_dt_handy_netze1"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_alle_dt_handy_netze1"
+                android:layout_toRightOf="@+id/flat_alle_dt_handy_netze1"
+                android:layout_toEndOf="@+id/flat_alle_dt_handy_netze1"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/relative_Layout3"
+            android:layout_alignLeft="@+id/relative_Layout3"
+            android:layout_alignStart="@+id/relative_Layout3"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Internet"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_internet1"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignTop="@+id/flat_internet1"
+                android:layout_toRightOf="@+id/flat_internet1"
+                android:layout_toEndOf="@+id/flat_internet1"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="16"
+                android:textColor="#bbc8d4"
+
+                android:id="@+id/internet_speed1"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MBits/s"
+                android:layout_marginLeft="5dp"
+                android:textColor="#bbc8d4"
+                android:layout_alignTop="@+id/internet_speed1"
+                android:layout_toRightOf="@+id/internet_speed1"
+                android:layout_toEndOf="@+id/internet_speed1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bis zu"
+                android:textColor="#bbc8d4"
+
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/flat_internet1"
+                android:layout_alignStart="@+id/flat_internet1"
+                android:id="@+id/textView26" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:textColor="#bbc8d4"
+                android:layout_marginLeft="20dp"
+
+                android:id="@+id/total_internet_usage_per_month1"
+
+                android:layout_alignTop="@+id/textView27"
+                android:layout_alignLeft="@+id/textView26"
+                android:layout_alignStart="@+id/textView26" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GB/Monat"
+                android:textColor="#bbc8d4"
+                android:layout_below="@+id/internet_speed1"
+                android:layout_alignRight="@+id/flat_internet1"
+                android:layout_alignEnd="@+id/flat_internet1"
+                android:id="@+id/textView27" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <!-- ..................................222222222222.................................... -->
+
+    <RelativeLayout
+        android:id="@+id/layout2"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#82828a"
+            android:id="@+id/relative_Layout1_2"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Special Plus*"
+
+                android:id="@+id/tarif_name_2"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#d8d6db"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="9"
+
+            android:id="@+id/tarif_price_euro2"
+
+            android:textSize="50sp"
+            android:textColor="#fffdfe"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/relative_Layout1_2"
+            android:layout_toLeftOf="@+id/comma2"
+            android:layout_toStartOf="@+id/comma2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=","
+            android:textSize="50sp"
+            android:id="@+id/comma2"
+            android:textColor="#fffdfe"
+            android:layout_alignBaseline="@+id/tarif_price_euro2"
+            android:layout_alignBottom="@+id/tarif_price_euro2"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="99"
+            android:textSize="20sp"
+
+            android:id="@+id/tarif_price_cent2"
+
+            android:textColor="#fffdfe"
+            android:layout_alignTop="@+id/comma2"
+            android:layout_toRightOf="@+id/comma2"
+            android:layout_toEndOf="@+id/comma2"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="\u20ac/Mon."
+            android:id="@+id/price_per_month2"
+            android:textColor="#fffdfe"
+            android:layout_below="@+id/tarif_price_cent2"
+            android:layout_toRightOf="@+id/comma2"
+            android:layout_toEndOf="@+id/comma2" />
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_below="@+id/tarif_price_euro2"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/relative_Layout2_2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Festnetz"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_festnetz2"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_festnetz2"
+                android:layout_toRightOf="@+id/flat_festnetz2"
+                android:layout_toEndOf="@+id/flat_festnetz2"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/relative_Layout2_2"
+            android:layout_alignLeft="@+id/relative_Layout2_2"
+            android:layout_alignStart="@+id/relative_Layout2_2"
+            android:id="@+id/relative_Layout3_2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Alle dt. Handy-Netze"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_alle_dt_handy_netze2"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_alle_dt_handy_netze2"
+                android:layout_toRightOf="@+id/flat_alle_dt_handy_netze2"
+                android:layout_toEndOf="@+id/flat_alle_dt_handy_netze2"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/relative_Layout3_2"
+            android:layout_alignLeft="@+id/relative_Layout3_2"
+            android:layout_alignStart="@+id/relative_Layout3_2"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Internet"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_internet2"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignTop="@+id/flat_internet2"
+                android:layout_toRightOf="@+id/flat_internet2"
+                android:layout_toEndOf="@+id/flat_internet2"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="16"
+                android:textColor="#bbc8d4"
+
+                android:id="@+id/internet_speed2"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MBits/s"
+                android:layout_marginLeft="5dp"
+                android:textColor="#bbc8d4"
+                android:layout_alignTop="@+id/internet_speed2"
+                android:layout_toRightOf="@+id/internet_speed2"
+                android:layout_toEndOf="@+id/internet_speed2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bis zu"
+                android:textColor="#bbc8d4"
+
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/flat_internet2"
+                android:layout_alignStart="@+id/flat_internet2"
+                android:id="@+id/textView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:textColor="#bbc8d4"
+                android:layout_marginLeft="20dp"
+
+                android:id="@+id/total_internet_usage_per_month2"
+
+                android:layout_alignTop="@+id/textView2"
+                android:layout_alignLeft="@+id/textView3"
+                android:layout_alignStart="@+id/textView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GB/Monat"
+                android:textColor="#bbc8d4"
+                android:layout_below="@+id/internet_speed2"
+                android:layout_alignRight="@+id/flat_internet2"
+                android:layout_alignEnd="@+id/flat_internet2"
+                android:id="@+id/textView2" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <!-- .........................3333333333333333333333333333333.............................. -->
+
+    <!-- ...................................................................................... -->
+
+    <RelativeLayout
+        android:id="@+id/layout3"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#82828a"
+            android:id="@+id/relative_Layout1_3"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Super*"
+
+                android:id="@+id/tarif_name_3"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#d8d6db"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="14"
+
+            android:id="@+id/tarif_price_euro3"
+
+            android:textSize="50sp"
+            android:textColor="#fffdfe"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/relative_Layout1_3"
+            android:layout_toLeftOf="@+id/comma3"
+            android:layout_toStartOf="@+id/comma3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=","
+            android:textSize="50sp"
+            android:id="@+id/comma3"
+            android:textColor="#fffdfe"
+            android:layout_alignBaseline="@+id/tarif_price_euro3"
+            android:layout_alignBottom="@+id/tarif_price_euro3"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="99"
+            android:textSize="20sp"
+
+            android:id="@+id/tarif_price_cent3"
+
+            android:textColor="#fffdfe"
+            android:layout_alignTop="@+id/comma3"
+            android:layout_toRightOf="@+id/comma3"
+            android:layout_toEndOf="@+id/comma3"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="\u20ac/Mon."
+            android:id="@+id/price_per_month3"
+            android:textColor="#fffdfe"
+            android:layout_below="@+id/tarif_price_cent3"
+            android:layout_toRightOf="@+id/comma3"
+            android:layout_toEndOf="@+id/comma3" />
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_below="@+id/tarif_price_euro3"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/relative_Layout2_3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Festnetz"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_festnetz3"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_festnetz3"
+                android:layout_toRightOf="@+id/flat_festnetz3"
+                android:layout_toEndOf="@+id/flat_festnetz3"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/relative_Layout2_3"
+            android:layout_alignLeft="@+id/relative_Layout2_3"
+            android:layout_alignStart="@+id/relative_Layout2_3"
+            android:id="@+id/relative_Layout3_3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Alle dt. Handy-Netze"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_alle_dt_handy_netze3"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_alle_dt_handy_netze3"
+                android:layout_toRightOf="@+id/flat_alle_dt_handy_netze3"
+                android:layout_toEndOf="@+id/flat_alle_dt_handy_netze3"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/relative_Layout3_3"
+            android:layout_alignLeft="@+id/relative_Layout3_3"
+            android:layout_alignStart="@+id/relative_Layout3_3"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Internet"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_internet3"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignTop="@+id/flat_internet3"
+                android:layout_toRightOf="@+id/flat_internet3"
+                android:layout_toEndOf="@+id/flat_internet3"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="16"
+                android:textColor="#bbc8d4"
+
+                android:id="@+id/internet_speed3"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MBits/s"
+                android:layout_marginLeft="5dp"
+                android:textColor="#bbc8d4"
+                android:layout_alignTop="@+id/internet_speed3"
+                android:layout_toRightOf="@+id/internet_speed3"
+                android:layout_toEndOf="@+id/internet_speed3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bis zu"
+                android:textColor="#bbc8d4"
+
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/flat_internet3"
+                android:layout_alignStart="@+id/flat_internet3"
+                android:id="@+id/textView4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:textColor="#bbc8d4"
+                android:layout_marginLeft="20dp"
+
+                android:id="@+id/total_internet_usage_per_month3"
+
+                android:layout_alignTop="@+id/textView5"
+                android:layout_alignLeft="@+id/textView4"
+                android:layout_alignStart="@+id/textView4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GB/Monat"
+                android:textColor="#bbc8d4"
+                android:layout_below="@+id/internet_speed3"
+                android:layout_alignRight="@+id/flat_internet3"
+                android:layout_alignEnd="@+id/flat_internet3"
+                android:id="@+id/textView5" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <!-- .................................444444444444444444.................................. -->
+
+    <!-- ..................................................................................... -->
+
+    <RelativeLayout
+        android:id="@+id/layout4"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#82828a"
+            android:id="@+id/relative_Layout1_4"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Super Plus*"
+
+                android:id="@+id/tarif_name_4"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#d8d6db"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="19"
+
+            android:id="@+id/tarif_price_euro4"
+
+            android:textSize="50sp"
+            android:textColor="#fffdfe"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/relative_Layout1_4"
+            android:layout_toLeftOf="@+id/comma4"
+            android:layout_toStartOf="@+id/comma4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=","
+            android:textSize="50sp"
+            android:id="@+id/comma4"
+            android:textColor="#fffdfe"
+            android:layout_alignBaseline="@+id/tarif_price_euro4"
+            android:layout_alignBottom="@+id/tarif_price_euro4"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="99"
+            android:textSize="20sp"
+
+            android:id="@+id/tarif_price_cent4"
+
+            android:textColor="#fffdfe"
+            android:layout_alignTop="@+id/comma4"
+            android:layout_toRightOf="@+id/comma4"
+            android:layout_toEndOf="@+id/comma4"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="\u20ac/Mon."
+            android:id="@+id/price_per_month4"
+            android:textColor="#fffdfe"
+            android:layout_below="@+id/tarif_price_cent4"
+            android:layout_toRightOf="@+id/comma4"
+            android:layout_toEndOf="@+id/comma4" />
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_below="@+id/tarif_price_euro4"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/relative_Layout2_4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Festnetz"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_festnetz4"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_festnetz4"
+                android:layout_toRightOf="@+id/flat_festnetz4"
+                android:layout_toEndOf="@+id/flat_festnetz4"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/relative_Layout2_4"
+            android:layout_alignLeft="@+id/relative_Layout2_4"
+            android:layout_alignStart="@+id/relative_Layout2_4"
+            android:id="@+id/relative_Layout3_4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Alle dt. Handy-Netze"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_alle_dt_handy_netze4"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_alle_dt_handy_netze4"
+                android:layout_toRightOf="@+id/flat_alle_dt_handy_netze4"
+                android:layout_toEndOf="@+id/flat_alle_dt_handy_netze4"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/relative_Layout3_4"
+            android:layout_alignLeft="@+id/relative_Layout3_4"
+            android:layout_alignStart="@+id/relative_Layout3_4"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Internet"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_internet4"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignTop="@+id/flat_internet4"
+                android:layout_toRightOf="@+id/flat_internet4"
+                android:layout_toEndOf="@+id/flat_internet4"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="16"
+                android:textColor="#bbc8d4"
+
+                android:id="@+id/internet_speed4"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MBits/s"
+                android:layout_marginLeft="5dp"
+                android:textColor="#bbc8d4"
+                android:layout_alignTop="@+id/internet_speed4"
+                android:layout_toRightOf="@+id/internet_speed4"
+                android:layout_toEndOf="@+id/internet_speed4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bis zu"
+                android:textColor="#bbc8d4"
+
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/flat_internet4"
+                android:layout_alignStart="@+id/flat_internet4"
+                android:id="@+id/textView6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:textColor="#bbc8d4"
+                android:layout_marginLeft="20dp"
+
+                android:id="@+id/total_internet_usage_per_month4"
+
+                android:layout_alignTop="@+id/textView7"
+                android:layout_alignLeft="@+id/textView6"
+                android:layout_alignStart="@+id/textView6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GB/Monat"
+                android:textColor="#bbc8d4"
+                android:layout_below="@+id/internet_speed4"
+                android:layout_alignRight="@+id/flat_internet4"
+                android:layout_alignEnd="@+id/flat_internet4"
+                android:id="@+id/textView7" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <!-- ................................55555555555555555555................................. -->
+
+    <!-- ....................................................................................... -->
+
+    <RelativeLayout
+        android:id="@+id/layout5"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#82828a"
+            android:id="@+id/relative_Layout1_5"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Basic*"
+
+                android:id="@+id/tarif_name_5"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#d8d6db"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="24"
+
+            android:id="@+id/tarif_price_euro5"
+
+            android:textSize="50sp"
+            android:textColor="#fffdfe"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/relative_Layout1_5"
+            android:layout_toLeftOf="@+id/comma5"
+            android:layout_toStartOf="@+id/comma5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=","
+            android:textSize="50sp"
+            android:id="@+id/comma5"
+            android:textColor="#fffdfe"
+            android:layout_alignBaseline="@+id/tarif_price_euro5"
+            android:layout_alignBottom="@+id/tarif_price_euro5"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="99"
+            android:textSize="20sp"
+
+            android:id="@+id/tarif_price_cent5"
+
+            android:textColor="#fffdfe"
+            android:layout_alignTop="@+id/comma5"
+            android:layout_toRightOf="@+id/comma5"
+            android:layout_toEndOf="@+id/comma5"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="\u20ac/Mon."
+            android:id="@+id/price_per_month5"
+            android:textColor="#fffdfe"
+            android:layout_below="@+id/tarif_price_cent5"
+            android:layout_toRightOf="@+id/comma5"
+            android:layout_toEndOf="@+id/comma5" />
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_below="@+id/tarif_price_euro5"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/relative_Layout2_5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Festnetz"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_festnetz5"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_festnetz5"
+                android:layout_toRightOf="@+id/flat_festnetz5"
+                android:layout_toEndOf="@+id/flat_festnetz5"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/relative_Layout2_5"
+            android:layout_alignLeft="@+id/relative_Layout2_5"
+            android:layout_alignStart="@+id/relative_Layout2_5"
+            android:id="@+id/relative_Layout3_5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Alle dt. Handy-Netze"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_alle_dt_handy_netze5"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_alle_dt_handy_netze5"
+                android:layout_toRightOf="@+id/flat_alle_dt_handy_netze5"
+                android:layout_toEndOf="@+id/flat_alle_dt_handy_netze5"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/relative_Layout3_5"
+            android:layout_alignLeft="@+id/relative_Layout3_5"
+            android:layout_alignStart="@+id/relative_Layout3_5"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Internet"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_internet5"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignTop="@+id/flat_internet5"
+                android:layout_toRightOf="@+id/flat_internet5"
+                android:layout_toEndOf="@+id/flat_internet5"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="16"
+                android:textColor="#bbc8d4"
+
+                android:id="@+id/internet_speed5"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MBits/s"
+                android:layout_marginLeft="5dp"
+                android:textColor="#bbc8d4"
+                android:layout_alignTop="@+id/internet_speed5"
+                android:layout_toRightOf="@+id/internet_speed5"
+                android:layout_toEndOf="@+id/internet_speed5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bis zu"
+                android:textColor="#bbc8d4"
+
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/flat_internet5"
+                android:layout_alignStart="@+id/flat_internet5"
+                android:id="@+id/textView8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:textColor="#bbc8d4"
+                android:layout_marginLeft="20dp"
+
+                android:id="@+id/total_internet_usage_per_month5"
+
+                android:layout_alignTop="@+id/textView9"
+                android:layout_alignLeft="@+id/textView8"
+                android:layout_alignStart="@+id/textView8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GB/Monat"
+                android:textColor="#bbc8d4"
+                android:layout_below="@+id/internet_speed5"
+                android:layout_alignRight="@+id/flat_internet5"
+                android:layout_alignEnd="@+id/flat_internet5"
+                android:id="@+id/textView9" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <!-- ................................66666666666666666666.................................. -->
+
+    <!-- ...................................................................................... -->
+
+    <RelativeLayout
+        android:id="@+id/layout6"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#82828a"
+            android:id="@+id/relative_Layout1_6"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Basic Plus*"
+
+                android:id="@+id/tarif_name_6"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#d8d6db"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="29"
+
+            android:id="@+id/tarif_price_euro6"
+
+            android:textSize="50sp"
+            android:textColor="#fffdfe"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/relative_Layout1_6"
+            android:layout_toLeftOf="@+id/comma6"
+            android:layout_toStartOf="@+id/comma6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=","
+            android:textSize="50sp"
+            android:id="@+id/comma6"
+            android:textColor="#fffdfe"
+            android:layout_alignBaseline="@+id/tarif_price_euro6"
+            android:layout_alignBottom="@+id/tarif_price_euro6"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="99"
+            android:textSize="20sp"
+
+            android:id="@+id/tarif_price_cent6"
+
+            android:textColor="#fffdfe"
+            android:layout_alignTop="@+id/comma6"
+            android:layout_toRightOf="@+id/comma6"
+            android:layout_toEndOf="@+id/comma6"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="\u20ac/Mon."
+            android:id="@+id/price_per_month6"
+            android:textColor="#fffdfe"
+            android:layout_below="@+id/tarif_price_cent6"
+            android:layout_toRightOf="@+id/comma6"
+            android:layout_toEndOf="@+id/comma6" />
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_below="@+id/tarif_price_euro6"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/relative_Layout2_6">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Festnetz"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_festnetz6"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_festnetz6"
+                android:layout_toRightOf="@+id/flat_festnetz6"
+                android:layout_toEndOf="@+id/flat_festnetz6"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/relative_Layout2_6"
+            android:layout_alignLeft="@+id/relative_Layout2_6"
+            android:layout_alignStart="@+id/relative_Layout2_6"
+            android:id="@+id/relative_Layout3_6">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Alle dt. Handy-Netze"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_alle_dt_handy_netze6"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_alle_dt_handy_netze6"
+                android:layout_toRightOf="@+id/flat_alle_dt_handy_netze6"
+                android:layout_toEndOf="@+id/flat_alle_dt_handy_netze6"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/relative_Layout3_6"
+            android:layout_alignLeft="@+id/relative_Layout3_6"
+            android:layout_alignStart="@+id/relative_Layout3_6"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Internet"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_internet6"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignTop="@+id/flat_internet6"
+                android:layout_toRightOf="@+id/flat_internet6"
+                android:layout_toEndOf="@+id/flat_internet6"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="16"
+                android:textColor="#bbc8d4"
+
+                android:id="@+id/internet_speed6"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MBits/s"
+                android:layout_marginLeft="5dp"
+                android:textColor="#bbc8d4"
+                android:layout_alignTop="@+id/internet_speed6"
+                android:layout_toRightOf="@+id/internet_speed6"
+                android:layout_toEndOf="@+id/internet_speed6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bis zu"
+                android:textColor="#bbc8d4"
+
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/flat_internet6"
+                android:layout_alignStart="@+id/flat_internet6"
+                android:id="@+id/textView10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:textColor="#bbc8d4"
+                android:layout_marginLeft="20dp"
+
+                android:id="@+id/total_internet_usage_per_month6"
+
+                android:layout_alignTop="@+id/textView11"
+                android:layout_alignLeft="@+id/textView10"
+                android:layout_alignStart="@+id/textView10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GB/Monat"
+                android:textColor="#bbc8d4"
+                android:layout_below="@+id/internet_speed6"
+                android:layout_alignRight="@+id/flat_internet6"
+                android:layout_alignEnd="@+id/flat_internet6"
+                android:id="@+id/textView11" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <!-- ................................77777777777777777777777............................... -->
+
+    <!-- ....................................................................................... -->
+
+    <RelativeLayout
+        android:id="@+id/layout7"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#82828a"
+            android:id="@+id/relative_Layout1_7"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Normal*"
+
+                android:id="@+id/tarif_name_7"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#d8d6db"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="34"
+
+            android:id="@+id/tarif_price_euro7"
+
+            android:textSize="50sp"
+            android:textColor="#fffdfe"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/relative_Layout1_7"
+            android:layout_toLeftOf="@+id/comma7"
+            android:layout_toStartOf="@+id/comma7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=","
+            android:textSize="50sp"
+            android:id="@+id/comma7"
+            android:textColor="#fffdfe"
+            android:layout_alignBaseline="@+id/tarif_price_euro7"
+            android:layout_alignBottom="@+id/tarif_price_euro7"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="99"
+            android:textSize="20sp"
+
+            android:id="@+id/tarif_price_cent7"
+
+            android:textColor="#fffdfe"
+            android:layout_alignTop="@+id/comma7"
+            android:layout_toRightOf="@+id/comma7"
+            android:layout_toEndOf="@+id/comma7"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="\u20ac/Mon."
+            android:id="@+id/price_per_month7"
+            android:textColor="#fffdfe"
+            android:layout_below="@+id/tarif_price_cent7"
+            android:layout_toRightOf="@+id/comma7"
+            android:layout_toEndOf="@+id/comma7" />
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_below="@+id/tarif_price_euro7"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/relative_Layout2_7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Festnetz"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_festnetz7"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_festnetz7"
+                android:layout_toRightOf="@+id/flat_festnetz7"
+                android:layout_toEndOf="@+id/flat_festnetz7"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/relative_Layout2_7"
+            android:layout_alignLeft="@+id/relative_Layout2_7"
+            android:layout_alignStart="@+id/relative_Layout2_7"
+            android:id="@+id/relative_Layout3_7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Alle dt. Handy-Netze"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_alle_dt_handy_netze7"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_alle_dt_handy_netze7"
+                android:layout_toRightOf="@+id/flat_alle_dt_handy_netze7"
+                android:layout_toEndOf="@+id/flat_alle_dt_handy_netze7"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/relative_Layout3_7"
+            android:layout_alignLeft="@+id/relative_Layout3_7"
+            android:layout_alignStart="@+id/relative_Layout3_7"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Internet"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_internet7"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignTop="@+id/flat_internet7"
+                android:layout_toRightOf="@+id/flat_internet7"
+                android:layout_toEndOf="@+id/flat_internet7"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="16"
+                android:textColor="#bbc8d4"
+
+                android:id="@+id/internet_speed7"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MBits/s"
+                android:layout_marginLeft="5dp"
+                android:textColor="#bbc8d4"
+                android:layout_alignTop="@+id/internet_speed7"
+                android:layout_toRightOf="@+id/internet_speed7"
+                android:layout_toEndOf="@+id/internet_speed7" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bis zu"
+                android:textColor="#bbc8d4"
+
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/flat_internet7"
+                android:layout_alignStart="@+id/flat_internet7"
+                android:id="@+id/textView12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:textColor="#bbc8d4"
+                android:layout_marginLeft="20dp"
+
+                android:id="@+id/total_internet_usage_per_month7"
+
+                android:layout_alignTop="@+id/textView13"
+                android:layout_alignLeft="@+id/textView12"
+                android:layout_alignStart="@+id/textView12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GB/Monat"
+                android:textColor="#bbc8d4"
+                android:layout_below="@+id/internet_speed7"
+                android:layout_alignRight="@+id/flat_internet7"
+                android:layout_alignEnd="@+id/flat_internet7"
+                android:id="@+id/textView13" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <!-- ...............................88888888888888888888888888............................. -->
+
+    <!-- ..................................................................................... -->
+
+    <RelativeLayout
+        android:id="@+id/layout8"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#82828a"
+            android:id="@+id/relative_Layout1_8"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Normal Plus*"
+
+                android:id="@+id/tarif_name_8"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#d8d6db"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="39"
+
+            android:id="@+id/tarif_price_euro8"
+
+            android:textSize="50sp"
+            android:textColor="#fffdfe"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/relative_Layout1_8"
+            android:layout_toLeftOf="@+id/comma8"
+            android:layout_toStartOf="@+id/comma8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=","
+            android:textSize="50sp"
+            android:id="@+id/comma8"
+            android:textColor="#fffdfe"
+            android:layout_alignBaseline="@+id/tarif_price_euro8"
+            android:layout_alignBottom="@+id/tarif_price_euro8"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="99"
+            android:textSize="20sp"
+
+            android:id="@+id/tarif_price_cent8"
+
+            android:textColor="#fffdfe"
+            android:layout_alignTop="@+id/comma8"
+            android:layout_toRightOf="@+id/comma8"
+            android:layout_toEndOf="@+id/comma8"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="\u20ac/Mon."
+            android:id="@+id/price_per_month8"
+            android:textColor="#fffdfe"
+            android:layout_below="@+id/tarif_price_cent8"
+            android:layout_toRightOf="@+id/comma8"
+            android:layout_toEndOf="@+id/comma8" />
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_below="@+id/tarif_price_euro8"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/relative_Layout2_8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Festnetz"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_festnetz8"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_festnetz8"
+                android:layout_toRightOf="@+id/flat_festnetz8"
+                android:layout_toEndOf="@+id/flat_festnetz8"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/relative_Layout2_8"
+            android:layout_alignLeft="@+id/relative_Layout2_8"
+            android:layout_alignStart="@+id/relative_Layout2_8"
+            android:id="@+id/relative_Layout3_8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Alle dt. Handy-Netze"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_alle_dt_handy_netze8"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_alle_dt_handy_netze8"
+                android:layout_toRightOf="@+id/flat_alle_dt_handy_netze8"
+                android:layout_toEndOf="@+id/flat_alle_dt_handy_netze8"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/relative_Layout3_8"
+            android:layout_alignLeft="@+id/relative_Layout3_8"
+            android:layout_alignStart="@+id/relative_Layout3_8"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Internet"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_internet8"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignTop="@+id/flat_internet8"
+                android:layout_toRightOf="@+id/flat_internet8"
+                android:layout_toEndOf="@+id/flat_internet8"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="16"
+                android:textColor="#bbc8d4"
+
+                android:id="@+id/internet_speed8"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MBits/s"
+                android:layout_marginLeft="5dp"
+                android:textColor="#bbc8d4"
+                android:layout_alignTop="@+id/internet_speed8"
+                android:layout_toRightOf="@+id/internet_speed8"
+                android:layout_toEndOf="@+id/internet_speed8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bis zu"
+                android:textColor="#bbc8d4"
+
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/flat_internet8"
+                android:layout_alignStart="@+id/flat_internet8"
+                android:id="@+id/textView14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:textColor="#bbc8d4"
+                android:layout_marginLeft="20dp"
+
+                android:id="@+id/total_internet_usage_per_month8"
+
+                android:layout_alignTop="@+id/textView15"
+                android:layout_alignLeft="@+id/textView14"
+                android:layout_alignStart="@+id/textView14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GB/Monat"
+                android:textColor="#bbc8d4"
+                android:layout_below="@+id/internet_speed8"
+                android:layout_alignRight="@+id/flat_internet8"
+                android:layout_alignEnd="@+id/flat_internet8"
+                android:id="@+id/textView15" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <!-- ......................................................... -->
+
+    <RelativeLayout
+        android:id="@+id/layout9"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#82828a"
+            android:id="@+id/relative_Layout1_9"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Normal M*"
+
+                android:id="@+id/tarif_name_9"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#d8d6db"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="44"
+
+            android:id="@+id/tarif_price_euro9"
+
+            android:textSize="50sp"
+            android:textColor="#fffdfe"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/relative_Layout1_9"
+            android:layout_toLeftOf="@+id/comma9"
+            android:layout_toStartOf="@+id/comma9" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=","
+            android:textSize="50sp"
+            android:id="@+id/comma9"
+            android:textColor="#fffdfe"
+            android:layout_alignBaseline="@+id/tarif_price_euro9"
+            android:layout_alignBottom="@+id/tarif_price_euro9"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="99"
+            android:textSize="20sp"
+
+            android:id="@+id/tarif_price_cent9"
+
+            android:textColor="#fffdfe"
+            android:layout_alignTop="@+id/comma9"
+            android:layout_toRightOf="@+id/comma9"
+            android:layout_toEndOf="@+id/comma9"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="\u20ac/Mon."
+            android:id="@+id/price_per_month9"
+            android:textColor="#fffdfe"
+            android:layout_below="@+id/tarif_price_cent9"
+            android:layout_toRightOf="@+id/comma9"
+            android:layout_toEndOf="@+id/comma9" />
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_below="@+id/tarif_price_euro9"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/relative_Layout2_9">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Festnetz"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_festnetz9"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_festnetz9"
+                android:layout_toRightOf="@+id/flat_festnetz9"
+                android:layout_toEndOf="@+id/flat_festnetz9"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/relative_Layout2_9"
+            android:layout_alignLeft="@+id/relative_Layout2_9"
+            android:layout_alignStart="@+id/relative_Layout2_9"
+            android:id="@+id/relative_Layout3_9">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Alle dt. Handy-Netze"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_alle_dt_handy_netze9"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_alle_dt_handy_netze9"
+                android:layout_toRightOf="@+id/flat_alle_dt_handy_netze9"
+                android:layout_toEndOf="@+id/flat_alle_dt_handy_netze9"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/relative_Layout3_9"
+            android:layout_alignLeft="@+id/relative_Layout3_9"
+            android:layout_alignStart="@+id/relative_Layout3_9"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Internet"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_internet9"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignTop="@+id/flat_internet9"
+                android:layout_toRightOf="@+id/flat_internet9"
+                android:layout_toEndOf="@+id/flat_internet9"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="16"
+                android:textColor="#bbc8d4"
+
+                android:id="@+id/internet_speed9"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MBits/s"
+                android:layout_marginLeft="5dp"
+                android:textColor="#bbc8d4"
+                android:layout_alignTop="@+id/internet_speed9"
+                android:layout_toRightOf="@+id/internet_speed9"
+                android:layout_toEndOf="@+id/internet_speed9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bis zu"
+                android:textColor="#bbc8d4"
+
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/flat_internet9"
+                android:layout_alignStart="@+id/flat_internet9"
+                android:id="@+id/textView17" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:textColor="#bbc8d4"
+                android:layout_marginLeft="20dp"
+
+                android:id="@+id/total_internet_usage_per_month9"
+
+                android:layout_alignTop="@+id/textView16"
+                android:layout_alignLeft="@+id/textView17"
+                android:layout_alignStart="@+id/textView17" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GB/Monat"
+                android:textColor="#bbc8d4"
+                android:layout_below="@+id/internet_speed9"
+                android:layout_alignRight="@+id/flat_internet9"
+                android:layout_alignEnd="@+id/flat_internet9"
+                android:id="@+id/textView16" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <!-- .................................................................................... -->
+
+    <!-- .................................................................................... -->
+
+    <RelativeLayout
+        android:id="@+id/layout10"
+        android:layout_width="500dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/box"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#82828a"
+            android:id="@+id/relative_Layout1_10"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Normal L*"
+
+                android:id="@+id/tarif_name_10"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#d8d6db"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="49"
+
+            android:id="@+id/tarif_price_euro10"
+
+            android:textSize="50sp"
+            android:textColor="#fffdfe"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/relative_Layout1_10"
+            android:layout_toLeftOf="@+id/comma10"
+            android:layout_toStartOf="@+id/comma10" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=","
+            android:textSize="50sp"
+            android:id="@+id/comma10"
+            android:textColor="#fffdfe"
+            android:layout_alignBaseline="@+id/tarif_price_euro10"
+            android:layout_alignBottom="@+id/tarif_price_euro10"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="99"
+            android:textSize="20sp"
+
+            android:id="@+id/tarif_price_cent10"
+
+            android:textColor="#fffdfe"
+            android:layout_alignTop="@+id/comma10"
+            android:layout_toRightOf="@+id/comma10"
+            android:layout_toEndOf="@+id/comma10"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="\u20ac/Mon."
+            android:id="@+id/price_per_month10"
+            android:textColor="#fffdfe"
+            android:layout_below="@+id/tarif_price_cent10"
+            android:layout_toRightOf="@+id/comma10"
+            android:layout_toEndOf="@+id/comma10" />
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_below="@+id/tarif_price_euro10"
+            android:layout_alignLeft="@+id/relativeLayout2"
+            android:layout_alignStart="@+id/relativeLayout2"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/relative_Layout2_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Festnetz"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_festnetz10"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_festnetz10"
+                android:layout_toRightOf="@+id/flat_festnetz10"
+                android:layout_toEndOf="@+id/flat_festnetz10"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/relative_Layout2_10"
+            android:layout_alignLeft="@+id/relative_Layout2_10"
+            android:layout_alignStart="@+id/relative_Layout2_10"
+            android:id="@+id/relative_Layout3_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Alle dt. Handy-Netze"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_alle_dt_handy_netze10"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignBottom="@+id/flat_alle_dt_handy_netze10"
+                android:layout_toRightOf="@+id/flat_alle_dt_handy_netze10"
+                android:layout_toEndOf="@+id/flat_alle_dt_handy_netze10"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="18dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="#4b5462"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/relative_Layout3_10"
+            android:layout_alignLeft="@+id/relative_Layout3_10"
+            android:layout_alignStart="@+id/relative_Layout3_10"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Flat Internet"
+                android:textColor="#fffdfe"
+                android:id="@+id/flat_internet10"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="17dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_tickmark"
+                android:layout_alignTop="@+id/flat_internet10"
+                android:layout_toRightOf="@+id/flat_internet10"
+                android:layout_toEndOf="@+id/flat_internet10"
+                android:layout_marginLeft="7dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="16"
+                android:textColor="#bbc8d4"
+
+                android:id="@+id/internet_speed10"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="MBits/s"
+                android:layout_marginLeft="5dp"
+                android:textColor="#bbc8d4"
+                android:layout_alignTop="@+id/internet_speed10"
+                android:layout_toRightOf="@+id/internet_speed10"
+                android:layout_toEndOf="@+id/internet_speed10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Bis zu"
+                android:textColor="#bbc8d4"
+
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/flat_internet10"
+                android:layout_alignStart="@+id/flat_internet10"
+                android:id="@+id/textView18" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:textColor="#bbc8d4"
+                android:layout_marginLeft="20dp"
+
+                android:id="@+id/total_internet_usage_per_month10"
+
+                android:layout_alignTop="@+id/textView19"
+                android:layout_alignLeft="@+id/textView18"
+                android:layout_alignStart="@+id/textView18" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="GB/Monat"
+                android:textColor="#bbc8d4"
+                android:layout_below="@+id/internet_speed10"
+                android:layout_alignRight="@+id/flat_internet10"
+                android:layout_alignEnd="@+id/flat_internet10"
+                android:id="@+id/textView19" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <!-- .................................................................................... -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:id="@+id/change_view_menu"
+        android:background="#edf5fe"
+        android:visibility="gone"
+        android:layout_marginTop="290dp"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:text="Top Tariffs"
+            android:id="@+id/top_tariffs_button"
+            android:textSize="35sp"
+            android:textColor="#3c434e"
+            android:background="#edf5fe"
+            android:paddingTop="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:text="Comparison"
+            android:id="@+id/comparision_button"
+            android:textSize="35sp"
+            android:textColor="#593c434e"
+            android:background="#edf5fe"
+            android:paddingBottom="20dp"
+            android:layout_below="@+id/top_tariffs_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textAllCaps="false"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

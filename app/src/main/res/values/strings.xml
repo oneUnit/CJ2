@@ -14,7 +14,7 @@
         <item>Settings</item>
         <item>Contact</item>
         <item>Comparison</item>
-        <item>Best Tarifs</item>
+        <item>Tariffs</item>
     </string-array>
     <string-array name="tarif">
         <item>Default</item>

@@ -118,7 +118,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             case 4:
-                fragment = new BestTarifFragment();
+                fragment = new TariffsFragment();
                 break;
             default:
                 //fragment = new UsageFragment();

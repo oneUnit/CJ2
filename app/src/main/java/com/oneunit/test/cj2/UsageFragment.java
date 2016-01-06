@@ -2,6 +2,7 @@ package com.oneunit.test.cj2;
 
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -50,20 +51,19 @@ public class UsageFragment extends Fragment{
     private long yAxisMaxDay = 1024;
     private long yAxisMaxWeekly = 7 * yAxisMaxDay;
     private long yAxisMaxMonthly = 31 * yAxisMaxDay;
-    ImageButton dateChangeLeft, dateChangeRight;
-    Button changeViewButton, dailyButton, weeklyButton, monthlyButton ;
+    ImageButton changeViewButton,dateChangeLeft, dateChangeRight;
+    Button  dailyButton, weeklyButton, monthlyButton ;
     boolean dailyButtonflag = true, weeklyButtonflag, montlyButtonflag;
 
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.usage_fragment, container, false);
+        Typeface roboto_regular = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Regular.ttf");
+        Typeface mytypeface = Typeface.createFromAsset(getActivity().getAssets(),"fonts/FuturaCondense-Normal.ttf");
 
         final RelativeLayout change_view_layout = (RelativeLayout)view.findViewById(R.id.change_view_menu);
         final RelativeLayout relativeLayout = (RelativeLayout)view.findViewById(R.id.layout2);
-        final ImageView dailyButtonCheck = (ImageView)view.findViewById(R.id.daily_button_check);
-        final ImageView weeklyButtonCheck = (ImageView)view.findViewById(R.id.weekly_button_check);
-        final ImageView monthlyButtonCheck = (ImageView)view.findViewById(R.id.monthly_button_check);
 
         try {
             this.config = new Config(this.getActivity());
@@ -87,10 +87,17 @@ public class UsageFragment extends Fragment{
         totalIndicator = (TextView) view.findViewById(R.id.totalVolumeNum);
         dateIndicator.setText(dateFormat.format(new Date()));
 
-        changeViewButton = (Button) view.findViewById(R.id.change_view);
+        changeViewButton = (ImageButton) view.findViewById(R.id.change_view);
+
         dailyButton = (Button) view.findViewById(R.id.daily_button);
+        dailyButton.setTypeface(mytypeface);
+
         weeklyButton = (Button) view.findViewById(R.id.weekly_button);
+        weeklyButton.setTypeface(mytypeface);
+
         monthlyButton = (Button) view.findViewById(R.id.monthly_button);
+        monthlyButton.setTypeface(mytypeface);
+
         dateChangeLeft = (ImageButton) view.findViewById(R.id.dateBeforeBtn);
         dateChangeRight = (ImageButton) view.findViewById(R.id.dateAfterBtn);
         //----------------------------------------------------------------------
@@ -102,9 +109,9 @@ public class UsageFragment extends Fragment{
                 Animation slideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_down);
                 change_view_layout.startAnimation(slideDown);
                 change_view_layout.setVisibility(View.GONE);
-                dailyButtonCheck.setVisibility(View.VISIBLE);
-                weeklyButtonCheck.setVisibility(View.INVISIBLE);
-                monthlyButtonCheck.setVisibility(View.INVISIBLE);
+                dailyButton.setTextColor(Color.parseColor("#3c434e"));
+                weeklyButton.setTextColor(Color.parseColor("#593c434e"));
+                monthlyButton.setTextColor(Color.parseColor("#593c434e"));
                 updateChart();
             }
 
@@ -118,9 +125,9 @@ public class UsageFragment extends Fragment{
                 Animation slideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_down);
                 change_view_layout.startAnimation(slideDown);
                 change_view_layout.setVisibility(View.GONE);
-                dailyButtonCheck.setVisibility(View.INVISIBLE);
-                weeklyButtonCheck.setVisibility(View.VISIBLE);
-                monthlyButtonCheck.setVisibility(View.INVISIBLE);
+                dailyButton.setTextColor(Color.parseColor("#593c434e"));
+                weeklyButton.setTextColor(Color.parseColor("#3c434e"));
+                monthlyButton.setTextColor(Color.parseColor("#593c434e"));
                 updateChart();
             }
 
@@ -134,9 +141,9 @@ public class UsageFragment extends Fragment{
                 Animation slideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.slide_down);
                 change_view_layout.startAnimation(slideDown);
                 change_view_layout.setVisibility(View.GONE);
-                dailyButtonCheck.setVisibility(View.INVISIBLE);
-                weeklyButtonCheck.setVisibility(View.INVISIBLE);
-                monthlyButtonCheck.setVisibility(View.VISIBLE);
+                dailyButton.setTextColor(Color.parseColor("#593c434e"));
+                weeklyButton.setTextColor(Color.parseColor("#593c434e"));
+                monthlyButton.setTextColor(Color.parseColor("#3c434e"));
                 updateChart();
             }
 
@@ -186,6 +193,7 @@ public class UsageFragment extends Fragment{
             }
 
         });
+
         changeViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -198,7 +206,6 @@ public class UsageFragment extends Fragment{
                 } else {
                     change_view_layout.startAnimation(slideDown);
                     change_view_layout.setVisibility(View.GONE);
-
                 }
             }
         });
