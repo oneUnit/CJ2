@@ -16,7 +16,7 @@ class MyAdapter extends BaseAdapter {
     private Context context;
     String[] menu;
     Activity a;
-    int[] images = {R.drawable.usage, R.drawable.settings, R.drawable.contact, R.drawable.comparision,R.drawable.comparision};
+    int[] images = {R.drawable.usage, R.drawable.comparision, R.drawable.contact, R.drawable.settings};
     public MyAdapter(Context context){
         this.context=context;
         menu=context.getResources().getStringArray(R.array.menu);

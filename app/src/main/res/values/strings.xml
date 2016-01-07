@@ -11,10 +11,9 @@
     <string name="select_tarif">Select Your Tarif</string>
     <string-array name="menu">
         <item>Usage</item>
-        <item>Settings</item>
-        <item>Contact</item>
-        <item>Comparison</item>
         <item>Tariffs</item>
+        <item>Contact</item>
+        <item>Settings</item>
     </string-array>
     <string-array name="tarif">
         <item>Default</item>
@@ -30,12 +29,8 @@
         <item>Monthly</item>
     </string-array>
     <string-array name="language">
-        <item>Default</item>
         <item>English</item>
         <item>Deutsch</item>
-        <item>French</item>
-        <item>Spanish</item>
-        <item>Finnish</item>
     </string-array>
 
 </resources>

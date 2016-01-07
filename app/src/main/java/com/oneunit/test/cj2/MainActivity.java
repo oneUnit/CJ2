@@ -108,17 +108,13 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 fragment = new UsageFragment();
                 break;
             case 1:
-                fragment = new SettingsFragment();
+                fragment = new TariffsFragment();
                 break;
             case 2:
                 fragment = new ContactFragment();
                 break;
             case 3:
-                Intent intent = new Intent(this, ComparisonFragment.class);
-                startActivity(intent);
-                break;
-            case 4:
-                fragment = new TariffsFragment();
+                fragment = new SettingsFragment();
                 break;
             default:
                 //fragment = new UsageFragment();

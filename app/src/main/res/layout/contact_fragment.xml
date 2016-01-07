@@ -9,6 +9,12 @@
         android:id="@+id/toplayout"
         android:background="#edf5fe">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/haw_icon"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
 
@@ -18,137 +24,165 @@
         android:layout_marginTop="65dp"
         android:background="#444b55">
 
-        <RelativeLayout
-            android:layout_width="340dp"
-            android:layout_height="410dp"
-            android:background="@drawable/box"
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/address"
+            android:background="@drawable/address_icon"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="29dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/telephone"
+            android:background="@drawable/telephone_icon"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true">
-            <RelativeLayout
-                android:layout_width="300dp"
-                android:layout_height="75dp"
-                android:background="#4b5462"
+            android:layout_alignRight="@+id/address"
+            android:layout_alignEnd="@+id/address" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:background="@drawable/web_icon"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/address"
+            android:layout_alignStart="@+id/address"
+            android:layout_marginBottom="29dp" />
+        <RelativeLayout
+            android:layout_width="210dp"
+            android:layout_height="90dp"
+            android:background="@drawable/transparent_box_icon"
+            android:layout_alignBottom="@+id/address"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="26dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/relativeLayout29">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView17"
+                android:background="@drawable/address_box"
+                android:layout_marginTop="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="85dp"
-                android:id="@+id/relativeLayout29">
+                android:layout_centerHorizontal="true" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageView17"
-                    android:background="@drawable/phone72"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="23dp"
-                    android:layout_marginEnd="23dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Berliner Tor 5"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="5dp"
+                android:id="@+id/textView20"
+                android:layout_below="@+id/imageView17"
+                android:layout_centerHorizontal="true" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="+49 40 428 75-0"
-                    android:textColor="#fffdfe"
-                    android:id="@+id/textView20"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="20099 Hamburg"
+                android:layout_marginTop="3dp"
+                android:textColor="#FFFFFF"
+                android:id="@+id/textView21"
+                android:layout_below="@+id/textView20"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="210dp"
+            android:layout_height="90dp"
+            android:background="@drawable/transparent_box_icon"
+            android:layout_marginTop="10dp"
+            android:layout_alignTop="@+id/telephone"
+            android:layout_alignLeft="@+id/relativeLayout29"
+            android:layout_alignStart="@+id/relativeLayout29"
+            android:id="@+id/relativeLayout30">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="+49 40 809 071 740 "
-                    android:id="@+id/textView21"
-                    android:textColor="#fffdfe"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="15dp"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="300dp"
-                android:layout_height="75dp"
-                android:background="#4b5462"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/relativeLayout29"
-                android:layout_alignLeft="@+id/relativeLayout29"
-                android:layout_alignStart="@+id/relativeLayout29"
-                android:id="@+id/relativeLayout30">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageView18"
-                    android:background="@drawable/sign39"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="23dp"
-                    android:layout_marginEnd="23dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView18"
+                android:background="@drawable/telephone_box"
+                android:layout_marginTop="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="info@haw-hamburg.de"
-                    android:textColor="#fffdfe"
-                    android:id="@+id/textView22"
-                    android:layout_alignTop="@+id/imageView18"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="5dp"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="300dp"
-                android:layout_height="75dp"
-                android:background="#4b5462"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/relativeLayout30"
-                android:layout_alignLeft="@+id/relativeLayout30"
-                android:layout_alignStart="@+id/relativeLayout30">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="+49 408 090 717 40"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffff"
+                android:id="@+id/textView22"
+                android:layout_below="@+id/imageView18"
+                android:layout_centerHorizontal="true" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:background="@drawable/location73"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="23dp"
-                    android:layout_marginEnd="23dp"
-                    android:id="@+id/imageView19" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Berliner Tor 5"
-                    android:id="@+id/textView23"
-                    android:textColor="#fffdfe"
-                    android:layout_marginTop="15dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="20099 Hamburg"
-                    android:id="@+id/textView24"
-                    android:textColor="#fffdfe"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="15dp"/>
-            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="+49 404 287 591 49 [FAX]"
+                android:textColor="#ffffff"
+                android:layout_marginTop="3dp"
+                android:id="@+id/textView23"
+                android:layout_below="@+id/textView22"
+                android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="210dp"
+            android:layout_height="90dp"
+            android:background="@drawable/transparent_box_icon"
+            android:layout_marginTop="10dp"
+            android:layout_alignTop="@+id/email"
+            android:layout_alignLeft="@+id/relativeLayout30"
+            android:layout_alignStart="@+id/relativeLayout30">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView19"
+                android:background="@drawable/email_box"
+                android:layout_marginTop="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="www.haw-hamburg.de"
+                android:textColor="#ffffff"
+                android:layout_marginTop="5dp"
+                android:id="@+id/textView24"
+                android:layout_below="@+id/imageView19"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="info@haw-hamburg.de"
+                android:id="@+id/textView25"
+                android:textColor="#ffffff"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/textView24"
+                android:layout_centerHorizontal="true" />
         </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/haw_logo"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"></RelativeLayout>
+    </RelativeLayout>
+
 
 </RelativeLayout>
